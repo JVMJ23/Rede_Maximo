@@ -1,0 +1,258 @@
+/* Definições base do botão voltar */
+.botao-voltar-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  margin: 5px 0;
+}
+
+.botao-voltar {
+  width: max-content;
+  font-family: 'MyriadProRegular', sans-serif;
+  font-size: 14px;
+  color: #003366;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Media queries mínimas para garantir a visualização em telas pequenas */
+@media screen and (max-width: 1200px) {
+  .index-main-content,
+  .meumaxclube-banner,
+  .folheto-container,
+  .atacado-banner,
+  .botao-voltar-container {
+    width: 80%;
+  }
+  .index-main-content{
+    height: 300px;
+    width: 80%;
+  }
+  .banner-slider{
+    width: 70%;
+  }
+  .slider-controls span {
+    font-size: 1.2rem;
+  }
+  .compre-banner{
+    width: 50%;
+  }
+  .botao-voltar {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    background-image: none;
+    
+  }
+  .index-main-content,
+  .meumaxclube-banner,
+  .folheto-container,
+  .atacado-banner,
+  .botao-voltar-container {
+    width: 85%;
+  }
+  .index-main-content{
+    height: 100%;
+  }
+  .banner-slider, .compre-banner{
+   height: 200px;
+  }
+  .banner-slider{
+    width: 80%;
+  }
+  .slider-controls span {
+    font-size: 0.9rem;
+  }
+  .compre-banner{
+    width: 38%;
+  }
+  .botao-voltar {
+    font-size: 0.7rem;
+  }
+}
+
+  @media screen and (max-width: 768px) {
+
+  .index-main-content {
+    gap: 3px;
+  }
+  .banner-slider, .compre-banner{
+    height: 160px;
+  }
+  .slider-indicators .indicator {
+    width: 5px;
+    height: 5px;
+  }
+  .side-images img,
+  .call-button img,
+  .call-button a {
+    width: calc(100vw / 7);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .index-main-content {
+    width: 85%;
+    height: 100%;
+    padding:0;
+  }
+  .banner-slider, .compre-banner{
+    height: 110px;
+  }
+  .banner-slider{
+    width: 69%;
+  }
+  .slider-controls span {
+    font-size: 0.9rem;
+  }
+  .slider-indicators .indicator {
+    width: 4px;
+    height: 4px;
+  }
+  .compre-banner{
+    width: 30%;
+  }
+  .botao-voltar-container {
+    width: 85%;
+  }
+  .botao-voltar {
+    right:50px;
+    font-size: 5px;
+  }
+}
+@media screen and (max-width: 480px) {
+    .index-main-content {
+    width: 85%;
+    height: 100%;
+    padding:0;
+  }
+  .banner-slider, .compre-banner{
+    height: 100px;
+  }
+  .banner-slider{
+    width: 70%;
+  }
+  .banner-slider img{
+    width: 100%;
+  } 
+  .slider-controls span {
+    font-size: 0.9rem;
+  }
+  .slider-indicators .indicator {
+    width: 4px;
+    height: 4px;
+  }
+  .compre-banner{
+    width: 34%;
+  }
+  .botao-voltar-container {
+    width: 85%;
+  }
+  .botao-voltar {
+    right:50px;
+    font-size: 5px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .index-main-content {
+    width: 85%;
+    height: 100%;
+    padding:0;
+  }
+  .banner-slider, .compre-banner{
+    height: 95px;
+  }
+  .banner-slider{
+    width: 70%;
+  }
+  .banner-slider img{
+    width: 100%;
+  } 
+  .slider-controls span {
+    font-size: 0.8rem;
+  }
+  .slider-indicators .indicator {
+    width: 4px;
+    height: 4px;
+  }
+  .compre-banner{
+    width: 34%;
+  }
+  .botao-voltar-container {
+    width: 85%;
+  }
+  .botao-voltar {
+    right:50px;
+    font-size: 5px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+    .index-main-content {
+    width: 85%;
+    height: 100%;
+    padding:0;
+  }
+  .banner-slider, .compre-banner{
+    height: 85px;
+  }
+  .banner-slider{
+    width: 70%;
+  }
+  .banner-slider img{
+    width: 100%;
+  } 
+  .slider-controls span {
+    font-size: 0.8rem;
+  }
+  .slider-indicators .indicator {
+    width: 4px;
+    height: 4px;
+  }
+  .compre-banner{
+    width: 34%;
+  }
+  .botao-voltar-container {
+    width: 85%;
+  }
+  .botao-voltar {
+    right:50px;
+    font-size: 5px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .index-main-content {
+    width: 85%;
+    height: 100%;
+    padding:0;
+  }
+  .banner-slider, .compre-banner{
+    height: 80px;
+  }
+  .banner-slider{
+    width: 70%;
+  }
+  .banner-slider img{
+    width: 100%;
+  } 
+  .slider-controls span {
+    font-size: 0.7rem;
+  }
+  .slider-indicators .indicator {
+    width: 4px;
+    height: 4px;
+  }
+  .compre-banner{
+    width: 34%;
+  }
+  .botao-voltar-container {
+    width: 85%;
+  }
+  .botao-voltar {
+    right:50px;
+    font-size: 5px;
+  }
+}

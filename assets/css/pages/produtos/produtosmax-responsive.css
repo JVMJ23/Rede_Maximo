@@ -1,0 +1,177 @@
+/* Media Queries para garantir responsividade */
+@media screen and (max-width: 1200px) {
+    .produtos {
+      max-width: 90%;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .galeria2 img, .galeria3 img {
+      height: 240px;
+    }
+    
+    .galeria2 a, .galeria3 a {
+      height: 260px;
+    }
+     .botao-voltar {
+      padding-left: 100%;
+      font-size: 15px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    body {
+      background-image: none;
+      background-color: #fff; 
+    }
+    .produtos h1 {
+    font-size: 1.6rem;
+    margin-top: 5px;
+    }
+    .produtos {
+      max-width: 90%;
+      padding: 15px;
+    }
+    
+    .galeria2, .galeria3 {
+      gap: 15px;
+    }
+    
+    .galeria2 img, .galeria3 img {
+      height: 200px;
+    }
+    
+    .galeria2 a, .galeria3 a {
+      height: 220px;
+      padding: 8px;
+    }
+    .botao-voltar {
+      padding-left: 100%;
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .produtos h1 {
+    font-size: 1.1rem;
+    }
+    /* Mantém o layout em 3 colunas e 2 colunas mesmo em telas menores */
+    .galeria2, .galeria3 {
+      gap: 1px;
+    }
+    
+    .galeria2 img, .galeria3 img {
+      height: 150px;
+    }
+    
+    .galeria2 a, .galeria3 a {
+      height: 170px;
+      padding: 5px;
+    }
+    
+    .botao-voltar {
+      font-size: 12px;
+      padding-left: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .produtos h1 {
+    font-size: 1.0rem;
+    }
+    .galeria2 img, .galeria3 img {
+      height: 120px;
+    }
+    
+    .galeria2 a, .galeria3 a {
+      height: 140px;
+    }
+    .botao-voltar {
+      padding-left: 100%;
+      font-size: 8px;
+    }
+  }
+  @media screen and (max-width: 425px){
+    .produtos h1 {
+    font-size: 1.0rem;
+    }
+    .produtos {
+      padding: 5px;
+    }
+    
+    .galeria2, .galeria3 {
+      gap: 0;
+    }
+    
+    .galeria2 img, .galeria3 img {
+      height: 150px;
+      width: 100%;
+    }
+    
+    .galeria2 a, .galeria3 a {
+      height: 150px;
+      padding: 1px;
+    }
+    .botao-voltar {
+      padding-left: 100%;
+      font-size: 8px;
+    }
+  }
+  
+
+  @media screen and (max-width: 375px){
+    .produtos h1 {
+    font-size: 0.9rem;
+    }
+    .produtos {
+      padding: 5px;
+    }
+    
+    .galeria2, .galeria3 {
+      gap: 0;
+    }
+    
+    .galeria2 img, .galeria3 img {
+      height: 150px;
+      width: 100%;
+    }
+    
+    .galeria2 a, .galeria3 a {
+      height: 150px;
+      padding: 5px;
+    }
+    .botao-voltar {
+      padding-left: 100%;
+      font-size: 8px;
+    }
+  }
+  
+  
+  @media screen and (max-width: 320px) {
+    .produtos h1 {
+      font-size: 0.8rem;
+    }
+    .produtos {
+      padding: 5px;
+    }
+    
+    .galeria2, .galeria3 {
+      gap: 0;
+    }
+    
+    .galeria2 img, .galeria3 img {
+      height: 150px;
+      width: 100%;
+    }
+    
+    .galeria2 a, .galeria3 a {
+      height: 120px;
+      padding: 1px;
+    }
+    
+    .botao-voltar {
+      font-size: 8px;
+      padding-left: 100%;
+      
+    }
+  }

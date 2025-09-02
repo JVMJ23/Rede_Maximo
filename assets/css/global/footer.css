@@ -1,0 +1,70 @@
+/* ---------------------------------------------------------------------------
+   Footer 
+--------------------------------------------------------------------------- */
+
+.site-footer {
+  max-width: 100%;
+  position: relative;
+  border-top: 15px solid #e84b2a;
+  background-image: url(../../images/global/footer-design.webp);
+  background-color: #183e85;
+  background-repeat: repeat-x;
+  background-size:auto 103%;
+  background-position: top;
+  color: #ffffff;
+  padding: 15px 0 20px;
+  font-family: 'MyriadProRegular', sans-serif;
+  text-align: center;
+}
+
+.site-footer .store-addresses {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  max-width: 720px;
+  margin: 0 auto 20px;
+  padding: 0 5px;
+  text-align: left;
+}
+
+.site-footer .store-addresses div {
+  flex: 1;
+}
+
+.site-footer .store-addresses p {
+  margin: 6px 0;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: lighter;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.site-footer .store-addresses strong {
+  font-family: 'MyriadProBlack', sans-serif;
+  color: #e84b2a;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.site-footer .footer-center {
+  text-align: center;
+  margin-top: 1px;
+}
+
+.site-footer .footer-center img {
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto 8px;
+  display: block;
+}
+
+.site-footer .footer-center p {
+  font-family: 'MyriadProRegular', sans-serif;
+  font-size: 10px;
+  margin: 0;
+  opacity: 0.85;
+  color: white;
+}
+
+

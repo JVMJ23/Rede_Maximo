@@ -1,0 +1,385 @@
+/* Media Queries para adaptação proporcional sem quebrar o layout */
+@media screen and (max-width: 1200px) {
+  .header-top-container,
+  .header-mid-container,
+  .header-bottom-container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  /* Redução proporcional para tablets grandes */
+  .header-top .logo img {
+    max-width: 160px;
+  }
+  
+  .header-top .social-links img {
+    max-width: 20px;
+  }
+  
+  .header-mid-container nav ul li a {
+    font-size: 12px;
+    padding: 8px 5px;
+  }
+  
+  .header-bottom-container nav ul li a {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  
+  .header-bottom-container nav ul li a img {
+    max-width: 25px;
+    max-height: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .header-top .logo img {
+    max-width: 95px;
+  }
+  
+  .header-top .social-links img {
+    max-width: 18px;
+  }
+  
+  .header-mid-container nav ul li a {
+    font-size: 11px;
+    padding: 1px 4px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-bottom-container nav ul {
+    gap: 5px;
+  }
+  
+  .header-bottom-container nav ul li {
+    margin: 0 3px;
+  }
+  
+  .header-bottom-container nav ul li a {
+    font-size: 12px;
+    padding: 1px 5px;
+  }
+  
+  .header-bottom-container nav ul li a img {
+    max-width: 18px;
+    max-height: 18px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Redução proporcional para dispositivos móveis */
+  .header-top{
+    padding: 5px 0 5px;
+  }
+  .header-top .logo img {
+    max-width: 80px;
+  }
+  
+  .header-top .social-links img {
+    max-width: 16px;
+  }
+  
+  .header-mid-container nav ul {
+    padding: 0 5%;
+  }
+  
+  .header-mid-container nav ul li a {
+    font-size: 8px;
+    padding: 2px 2px;
+  }
+  
+  .header-bottom-container {
+    padding: 0 10px;
+  }
+  
+  .header-bottom-container nav ul {
+    gap: 2px;
+  }
+  
+  .header-bottom-container nav ul li {
+    margin: 0 1px;
+  }
+  
+  .header-bottom-container nav ul li a {
+    font-size: 8px;
+    padding: 2px;
+  }
+  
+  .header-bottom-container nav ul li a img {
+    max-width: 18px;
+    max-height: 18px;
+    margin-right: 2px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+  .header-top {
+    padding: 1px 0;
+    background-size: 115%;
+  }
+  
+  .header-top .logo img {
+    max-width: 85px;
+    padding-top: 2px;
+  }
+  
+  .header-top .social-links {
+    gap: 3px;
+  }
+  
+  .header-top .social-links img {
+    max-width: 10px;
+  }
+  
+  .header-mid {
+    padding: 1px 0;
+  }
+  
+  .header-mid-container nav ul {
+    padding: 0 1%;
+  }
+  
+  .header-mid-container nav ul li a {
+    font-size: 9px;
+    padding: 1px 5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .header-bottom {
+    padding: 1px 0;
+  }
+  
+  .header-bottom-container {
+    padding: 0 5px;
+  }
+  
+  .header-bottom-container nav ul {
+    gap: 1px;
+  }
+  
+  .header-bottom-container nav ul li a {
+    font-size: 10px;
+    padding: 3px 1px;
+  }
+  
+  .header-bottom-container nav ul li a img {
+    max-width: 11px;
+    max-height: 11px;
+    margin-right: 1px;
+  }
+  
+  /* Ajuste de hover para telas pequenas */
+  .header-mid-container nav ul li a:hover,
+  .header-bottom-container nav ul li a:hover {
+    transition: background-color 0.1s ease;
+  }
+}
+@media screen and (max-width: 425px) {
+    .header-top {
+    padding: 1px 0;
+    background-size: cover;
+  
+  }
+  
+  .header-top .logo img {
+    max-width: 70px;
+    padding-top: 2px;
+  }
+  
+  .header-top .social-links {
+    gap: 2px;
+  }
+  
+  .header-top .social-links img {
+    max-width: 11px;
+  }
+  
+  .header-mid {
+    padding: 2px 0;
+  }
+  
+  .header-mid-container nav ul {
+    padding: 0 2%;
+  }
+  
+  .header-mid-container nav ul li a {
+    font-size: 8px;
+    padding: 1px 3px;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .header-bottom {
+    padding: 1px 0;
+  }
+  
+  .header-bottom-container {
+    flex-wrap:wrap ;
+    padding: 0 2%;
+  }
+  
+  .header-bottom-container nav ul {
+    gap: 1px;
+  }
+  
+  .header-bottom-container nav ul li a {
+    font-size: 9px;
+    padding: 2px 2px;
+  }
+  
+  .header-bottom-container nav ul li a img {
+    max-width: 10px;
+    max-height: 10px;
+    margin-right: 1px;
+  }
+  
+  /* Ajuste de hover para telas pequenas */
+  .header-mid-container nav ul li a:hover,
+  .header-bottom-container nav ul li a:hover {
+    transition: background-color 0.1s ease;
+  }
+}
+
+@media screen and (max-width: 375px) {
+   .header-top {
+    padding: 5px 0;
+  }
+  
+  .header-top .logo img {
+    max-width: 70px;
+    padding-top: 5px;
+  }
+  
+  .header-top .social-links {
+    gap: 2px;
+  }
+  
+  .header-top .social-links img {
+    max-width: 9px;
+  }
+  
+  .header-mid {
+    padding: 3px 0;
+  }
+  
+  
+  .header-mid-container nav ul li a {
+    font-size: 0.4rem;
+    padding: 3px 5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .header-bottom {
+    padding: 5px 0;
+  }
+  
+  .header-bottom-container {
+    flex-wrap:wrap ;
+  }
+  
+  .header-bottom-container nav ul {
+    gap: 1px;
+  }
+  
+  .header-bottom-container nav ul li a {
+    font-size: 0.45rem;
+    padding: 3px 2px;
+  }
+  
+  .header-bottom-container nav ul li a img {
+    max-width: 11px;
+    max-height: 11px;
+    margin-right: 1px;
+  }
+  
+  /* Ajuste de hover para telas pequenas */
+  .header-mid-container nav ul li a:hover,
+  .header-bottom-container nav ul li a:hover {
+    transition: background-color 0.1s ease;
+  }
+}
+
+
+
+@media screen and (max-width: 320px) {
+   .header-top {
+    padding: 1px 0;
+    background-image: url(../../images/global/background-blue.webp);
+    background-size: 105%;
+    text-align: center;
+  }
+  
+  .header-top .logo img {
+    max-width: 50px;
+    padding-top: 2px;
+  }
+  
+  .header-top .social-links {
+    gap: 2px;
+  }
+  
+  .header-top .social-links img {
+    max-width: 8px;
+  }
+  
+  .header-mid {
+    padding: 1px 0;
+    text-align: center;
+  }
+  
+  .header-mid-container nav ul {
+    padding: 0 2%;
+  }
+  
+  .header-mid-container nav ul li a {
+    font-size: 0.4rem;
+    padding: 1px 2px;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .header-bottom {
+    padding: 1px 1px;
+    text-align: center;
+  }
+  
+  .header-bottom-container {
+    flex-wrap:wrap ;
+  }
+  
+  .header-bottom-container nav ul {
+    gap: 1px;
+  }
+  
+  .header-bottom-container nav ul li a {
+    font-size: 0.43rem;
+    padding: 1px 1px;
+  }
+  
+  .header-bottom-container nav ul li a img {
+    max-width: 10px;
+    max-height: 10px;
+    margin-right: 1px;
+  }
+  
+  /* Ajuste de hover para telas pequenas */
+  .header-mid-container nav ul li a:hover,
+  .header-bottom-container nav ul li a:hover {
+    transition: background-color 0.1s ease;
+  }
+}
+
+/* Garantir que o hover funcione em dispositivos touch */
+@media (hover: none) {
+  .header-mid-container nav ul li a:active {
+    background-color: #183e85;
+    color: inherit;
+  }
+  
+  .header-bottom-container nav ul li a:active {
+    background-color: #f2f2f2d7;
+    color: #e84b2a;
+  }
+}

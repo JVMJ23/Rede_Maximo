@@ -1,0 +1,486 @@
+@media screen and (max-width: 992px) {
+  .recaptcha {
+    overflow: visible !important;
+    display: flex;
+    justify-content: center;
+    transform-origin: left top;
+
+  }
+  
+
+  .formulario-container {
+    padding: 0 20px;
+    width: 100%;
+  }
+  
+  .formulario-top h1 {
+    font-size: 32px;
+  }
+  .formulario-top p{
+    font-size: 16px;
+  }
+  
+  .form-row {
+    gap: 10px;
+  }
+  
+  .btn-upload {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+  .btn-enviar{
+    font-size: 18px;
+    padding: 10px 15px;
+    margin-top:4px;
+  }
+  .formulario-bottom {
+    gap: 10px;
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: none;
+    background-color: #fff;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+  
+  .recaptcha {
+    overflow: visible !important;
+    display: flex;
+    justify-content: flex-start;
+    transform-origin: left top;
+
+  }
+
+  .g-recaptcha {
+    justify-content: center;
+    transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+    transform-origin: 0 0;
+  }
+  
+
+  .formulario-container {
+    padding: 0 20px;
+    width: 90%;
+  }
+  
+  .formulario-top h1 {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+  .formulario-top p{
+    font-size: 14px;
+  }
+  .form-row {
+    gap: 5px;
+  }
+  
+  label {
+    font-size: 11px;
+    min-height: 12px; /* Garantir altura mínima */
+    white-space: nowspace;
+    overflow: hidden;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    padding: 8px;
+    font-size: 13px;
+    min-height: 20px; /* iOS precisa de pelo menos 20px para touch */
+  }
+  
+  select {
+    padding: 8px;
+    font-size: 13px;
+    min-height: 20px; /* iOS precisa de pelo menos 20px para touch */
+  }
+   .form-group p{
+    font-size: 14px;
+ }
+  .formulario-bottom {
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .btn-upload {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  .btn-enviar{
+    font-size: 16px;
+    padding: 8px 12px;
+    margin-top: 3px;
+  }
+  .modal-content p {
+    font-size: 14px;
+  }
+  
+}
+
+@media screen and (max-width: 576px) {
+  .recaptcha {
+    overflow: visible;
+    display: flex;
+    justify-content: flex-start;
+    transform-origin: left top;
+    transform: scale(0.85); /* Reduz o tamanho geral */
+
+  }
+
+  .g-recaptcha {
+    justify-content: center;
+    transform: scale(0.60);
+    -webkit-transform: scale(0.60);
+    transform-origin: 0 0;
+  }
+  
+  
+
+  main {
+    padding: 15px 10px;
+  }
+  
+  .formulario-container {
+    padding: 0 10px;
+  }
+  
+  .formulario-top h1 {
+    font-size: 22px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+  .formulario-top p{
+    font-size: 10px;
+  }
+  .form-row {
+    gap: 5px;
+  }
+   .formulario-bottom{
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  label {
+    font-size: 10px;
+    margin-bottom: 3px;
+    min-height: 12px; /* Garantir altura mínima */
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    padding: 6px;
+    font-size: 11px;
+    min-height: 20px; /* iOS precisa de pelo menos 20px para touch */
+  }
+  
+  select {
+    padding: 6px;
+    font-size: 11px;
+    min-height: 20px; /* iOS precisa de pelo menos 20px para touch */
+  }
+  .form-group p{
+    font-size: 9px;
+ }
+  .formulario-bottom {
+    gap: 8px;
+    margin-top: 18px;
+  }
+  
+  .btn-upload {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  .btn-enviar{
+    margin-top: 3px;
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  .file-name {
+    font-size: 10px;
+  }
+  
+  .politica {
+    font-size: 10px;
+  }
+  
+  .modal-content p {
+    font-size: 10px;
+  }
+  
+}
+
+@media screen and (max-width: 425px) {
+  .recaptcha {
+    overflow: visible;
+    display: flex;
+    justify-content: flex-start;
+    transform-origin: left top;
+    transform: scale(0.90); /* Reduz o tamanho geral */
+
+  }
+
+  .g-recaptcha {
+    justify-content: center;
+    transform: scale(0.56);
+    -webkit-transform: scale(0.56);
+    transform-origin: 0 0;
+  }
+  
+
+  .formulario-top h1 {
+    font-size: 19px;
+  }
+  .formulario-top p{
+    font-size: 9px;
+  }
+   .formulario-bottom{
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  label {
+    font-size: 9px; /* Aumentado de 7px - iOS tem problemas com < 8px */
+    min-height: 12px; /* Garantir altura mínima */
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    padding: 5px;
+    font-size: 9px; /* Aumentado de 7px */
+    min-height: 20px; /* iOS precisa de pelo menos 20px para touch */
+  }
+
+  select {
+    padding: 5px;
+    font-size: 9px; 
+    min-height: 20px; /* iOS precisa de pelo menos 20px para touch */
+  }
+  .form-group p{
+    font-size: 8px;
+ }
+  .btn-upload {
+    font-size: 11px;
+    padding: 5px 8px;
+    margin-top: 2px;
+  }
+  .btn-enviar{
+    font-size: 11px;
+    padding: 5px 8px;
+    margin-top: 1px;
+    margin-bottom: 2px;
+  }
+  .file-name {
+    font-size: 9px; /* Aumentado de 7px */
+  }
+  .imagem-box img {
+    max-width: 100%;
+    height: auto;
+    min-height: 190px;
+    display: block;
+  }
+  .politica {
+    font-size: 8px;
+  }
+  
+  .modal-content p {
+    font-size: 8px;
+  }
+  
+}
+
+@media screen and (max-width: 375px) {
+  .formulario-container{
+    width: 95%;
+  }
+  .recaptcha {
+    overflow: visible;
+    display: flex;
+    justify-content: flex-start;
+    transform-origin: left top;
+    transform: scale(0.85); /* Reduz o tamanho geral */
+
+  }
+  .g-recaptcha {
+    justify-content: center;
+    transform: scale(0.50);
+    -webkit-transform: scale(0.50);
+    transform-origin: 0 0;
+  }
+
+  .formulario-top h1 {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .formulario-top p{
+    font-size: 8px;
+  }
+  .form-row {
+    gap: 5px;
+  }
+  .formulario-bottom{
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  label {
+    font-size: 7px; 
+    margin-bottom: 4px;
+    margin-top: 5px;
+    min-height: 12px; 
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    padding: 4px;
+    font-size: 8px; 
+    min-height: 20px; /* iOS precisa de pelo menos 20px para touch */
+  }
+
+  select {
+    padding: 4px;
+    font-size: 8px;
+    min-height: 20px; /* iOS precisa de pelo menos 20px para touch */
+  }
+ .form-group p{
+  font-size: 8px;
+ }
+  .btn-upload {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+  .btn-enviar{
+    font-size: 10px;
+    padding: 4px 6px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  .file-name {
+    font-size: 8px; /* Aumentado de 6px */
+  }
+  
+  .imagem-box {
+    width: 50%;
+    margin-bottom: 0;
+  }
+  
+  .imagem-box img {
+    max-width: 100%;
+    height: auto;
+    min-height: 150px;
+    display: block;
+  }
+  
+  .modal-content p {
+    font-size: 8px;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .formulario-container{
+    width: 95%;
+}
+  .recaptcha {
+    overflow: visible;
+    display: flex;
+    justify-content: flex-start;
+    transform-origin: left top;
+    transform: scale(0.83); /* Reduz o tamanho geral */
+
+  }
+  .g-recaptcha {
+   
+    justify-content: center;
+    transform: scale(0.45);
+    -webkit-transform: scale(0.45);
+  }
+
+  .formulario-top h1 {
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+  .formulario-top p{
+    font-size: 8px;
+  }
+
+  .form-row {
+    gap: 5px;
+  }
+  
+  label {
+    font-size: 7px; /* Aumentado de 5px - iOS tem problemas com < 8px */
+    margin-bottom: 3px;
+    margin-top: 5px;
+    min-height: 12px; /* Garantir altura mínima */
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    padding: 4px;
+    font-size: 8px; /* Aumentado de 6px */
+    min-height: 20px; /* iOS precisa de pelo menos 20px para touch */
+  }
+  
+  select {
+    padding: 4px;
+    font-size: 8px; /* Aumentado de 6px */
+    min-height: 20px; /* iOS precisa de pelo menos 20px para touch */
+  }
+  
+  .btn-upload {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+  .btn-enviar{
+    font-size: 10px;
+    padding: 2px 4px;
+    margin-bottom:2px;
+    margin-top: 0px;
+  }
+  .file-name {
+    font-size: 8px; 
+  }
+  
+  .politica {
+    font-size: 8px; 
+  }
+  
+  .formulario-bottom {
+    margin-top: 5px;
+    margin-bottom:0px;
+    min-height: 120px;
+  }
+  .form-group p{
+    font-size: 6px;
+  }
+  .imagem-box {
+    width: 50%;
+    margin-bottom: 0;
+  }
+  
+  .imagem-box img {
+    object-fit: scale-down;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0;
+  }
+  
+  .modal-content p {
+    font-size: 12px;
+  }
+}

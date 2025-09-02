@@ -1,0 +1,87 @@
+/* Media queries para responsividade */
+@media screen and (max-width: 992px) {
+  main {
+    padding: 20px 15px;
+  }
+  
+  .container h1 {
+    font-size: 30px;
+  }
+  .troco-solidario img {
+    max-width: 90%;
+  }
+  
+  
+  .container p,
+  .institutions,
+  .institution,
+  .mensagem-final {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: none;
+    background-color: #fff; 
+  }
+  .container{
+    width:95%
+  }
+  .container h1 {
+    font-size: 28px;
+  }
+  
+  .troco-solidario img {
+    max-width: 80%;
+  }
+  
+  .institution {
+    padding: 0;
+  }
+  
+  .institution img {
+    width: 50px;
+    margin-right: 10px;
+  }
+  
+  .container p,
+  .institution p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main {
+    padding: 15px 10px;
+  }
+  
+  .container h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .institutions p{
+    margin-bottom: 10px;
+    font-size: 10px;
+  }
+  .institution {
+    margin-bottom: 15px;
+  }
+  
+  .institution img {
+    width: 40px;
+  }
+  
+
+  
+  .agradecimento p,
+  .container p,
+  .institution p,
+  .mensagem-final {
+    font-size: 10px;
+  }
+  
+  .botao-voltar {
+    font-size: 8px;
+  }
+}

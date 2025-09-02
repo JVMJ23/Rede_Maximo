@@ -1,0 +1,440 @@
+/* MEDIA QUERIES - Mantendo sempre o layout de 3 colunas
+--------------------------------------------------------------------------- */
+
+/* Tablets grandes (1024px - 1200px) */
+@media screen and (max-width: 1200px) {
+  main{
+    background-image: none;
+  }
+  .container {
+    width: 85%;
+  }
+  
+  h1 {
+    margin-top: 3%;
+    font-size: 36px;
+    padding: 0 30px;
+  }
+  
+  .banner-lojas {
+    max-width: 80%;
+    padding: 0 30px;
+  }
+}
+
+/* Tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  body {
+    background: none;
+  }
+
+  .container {
+    width: 90%;
+    gap: 8px;
+  }
+  
+  .column-left, .column-middle {
+    width: 30%;
+  }
+  
+  .column-right {
+    width: 55%;
+  }
+  
+  .section h1 {
+    font-size: 32px;
+    padding: 0 20px;
+  }
+  
+  .loja {
+    margin-bottom: 10px;
+  }
+  
+  .mapa {
+    min-height: 200px;
+    max-height: 700px;
+  }
+  
+  .banner-lojas {
+    max-width: 85%;
+    padding: 0 30px;
+    gap: 15px;
+  }
+  
+  .banner-lojas p {
+    max-width: 250px;
+    font-size: 13px;
+    align-items: end;
+  }
+  
+  .banner-lojas img {
+    width: 100%;
+  }
+  
+  .banner-lojas .botao-voltar {
+    font-size: 11px;
+  }
+}
+
+/* Tablets pequenos (600px - 768px) */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    gap: 6px;
+  }
+  
+  .column-left, .column-middle {
+    width: 30%;
+  }
+  
+  .column-right {
+    width: 60%;
+  }
+  
+  h1 {
+    margin-top: 15px;
+    font-size: 28px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+  
+  .loja {
+    margin-bottom: 10px;
+  }
+  
+  .loja img {
+    height: auto;
+    width: 100%;
+  }
+  
+  .mapa {
+    padding: 8px;
+    min-height: 200px;
+    max-height: 600px;
+  }
+  
+  .banner-lojas {
+    max-width: 90%;
+    padding: 0 15px;
+    gap: 8px;
+  }
+  
+  .banner-lojas p {
+    font-size: 12px;
+    max-width: 200px;
+  }
+  
+  .banner-lojas .banner-imagem {
+    max-width: 300px;
+  }
+  
+  .banner-lojas img {
+    width: 100%;
+  }
+  
+  .banner-lojas .botao-voltar {
+    font-size: 10px;
+  }
+}
+
+/* Smartphones grandes (480px - 600px) */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 98%;
+    gap: 4px;
+  }
+  
+  .column-left, .column-middle {
+    width: 30%;
+  }
+  
+  .column-right {
+    width: 48%;
+  }
+  
+  h1 {
+    font-size: 24px;
+    padding: 0 10px;
+    margin-bottom: 15px;
+  }
+  
+  .loja {
+    margin-bottom: 5px;
+  }
+  
+  .loja img {
+    height: 70px;
+    width: 100%;
+  }
+  
+  .mapa {
+    padding: 5px;
+    min-height: 200px;
+    max-height: 500px;
+  }
+  
+  .banner-lojas {
+    flex-direction: row;
+    max-width: 95%;
+    padding: 0 10px;
+    gap: 5px;
+    text-align: center;
+  }
+  
+  .banner-lojas p {
+    text-align: center;
+    font-size: 10px;
+  }
+  
+  .banner-lojas .banner-imagem {
+    max-width: 280px;
+  }
+  
+  .botao-voltar {
+    font-size: 8px;
+  }
+}
+
+/* Smartphones (360px - 480px) */
+@media screen and (max-width: 480px) {
+  .container {
+    width: 90%;
+    gap: 3px;
+  }
+  
+  .column-left, .column-middle {
+    width: 29%;
+  }
+  
+  .column-right {
+    width: 50%;
+  }
+  
+  h1 {
+    font-size: 18px;
+    padding: 0 10px;
+    margin-bottom: 8px;
+  }
+  
+  .loja {
+    margin-bottom: 6px;
+  }
+  
+  .loja img {
+    height: 80px;
+    width: 90%;
+  }
+  
+  .mapa {
+    padding: 3px;
+    min-height: 100px;
+    max-height: 450px;
+  }
+  
+  .banner-lojas {
+    flex-direction: row;
+    padding: 0 10px;
+    margin: 20px auto 15px;
+    gap: 4px;
+  }
+  
+  .banner-lojas p {
+    max-width: 100px;
+    font-size: 8px;
+    line-height: 1.4;
+  }
+  
+  .banner-lojas .banner-imagem {
+    max-width: 200px;
+  }
+  
+  .banner-lojas .botao-voltar {
+    font-size: 7px;
+  }
+}
+
+/* Smartphones (até 425px) */
+@media screen and (max-width: 425px) {
+  .container {
+    min-height:35vh;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .column-left, .column-middle {
+    width: 28%;
+  }
+  
+  .column-right {
+    width: 50%;
+    height: 100%;
+  }
+  
+  h1 {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .loja {
+    margin-bottom: 4px;
+  }
+  
+  .loja img {
+    height: auto;
+    width: 100%;
+  }
+  
+  .mapa {
+    padding: 3px;
+    min-height: 120px;
+    max-height: 500px;
+  }
+  
+  .mapa img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .banner-lojas {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+
+  .banner-lojas img {
+    max-width: 200px;
+    width: 100%;
+  }
+  
+  .banner-lojas p {
+    max-width: 120px;
+    font-size: 7px;
+    text-align: right;
+  }
+
+  .banner-lojas .botao-voltar {
+    font-size: 6px;
+  }
+}
+
+/* Smartphones pequenos (até 375px) */
+@media screen and (max-width: 375px) {
+  .container {
+    min-height:30vh;
+    gap: 5px;
+  }
+  
+  .column-left, .column-middle {
+    width: 30%;
+  }
+  
+  .column-right {
+    width: 60%;
+    height: 100%;
+  }
+  
+  h1 {
+    font-size: 17px;
+  }
+  
+  .loja {
+    margin-bottom: 6px;
+  }
+  
+  .loja img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .mapa {
+    padding: 5px;
+    min-height: 100px;
+    max-height: 500px;
+  }
+  
+  .mapa img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .banner-lojas {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .banner-lojas img {
+    max-width: 200px;
+    width: 100%;
+  }
+  
+  .banner-lojas p {
+    max-width: 100px;
+    font-size: 6px;
+    text-align: right;
+  }
+
+  .banner-lojas .botao-voltar {
+    font-size: 6px;
+  }
+}
+
+/* Smartphones muito pequenos (até 320px) */
+@media screen and (max-width: 320px) {
+  .container {
+    min-height:40vh;
+    gap: 2px;
+  }
+  
+  .column-left, .column-middle {
+    width: 30%;
+  }
+  
+  .column-right {
+    width: 65%;
+    height: 100%;
+  }
+  
+  h1 {
+    font-size: 14px;
+  }
+  
+  .loja {
+    margin-bottom: 6px;
+  }
+  
+  .loja img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .mapa {
+    padding: 5px;
+    min-height: 100px;
+    max-height: 500px;
+  }
+  
+  .mapa img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .banner-lojas {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .banner-lojas img {
+    max-width: 280px;
+    width: 100%;
+  }
+  
+  .banner-lojas p {
+    max-width: 90px;
+    font-size: 5px;
+    text-align: right;
+  }
+
+  .banner-lojas .botao-voltar {
+    font-size: 6px;
+  }
+}

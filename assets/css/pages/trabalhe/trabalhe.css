@@ -1,0 +1,328 @@
+
+   /*fundo*/
+   body{
+    background-image: url(../../../images/global/background-main2.webp);
+    background-size :900px auto;
+    background-repeat: repeat-y;
+    background-color: none;
+    background-position: right;
+}
+
+main {
+  position: relative;
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+  
+}
+
+/* Main Container - LAYOUT ORIGINAL */
+    main {
+      position: relative;
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex: 1;
+    }
+    
+    .formulario-container {
+      max-width: 920px;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    
+    /* Formulário Top - TÍTULO ORIGINAL */
+    .formulario-top h1 {
+      text-align: center;
+      color: #e84b2a;
+      font-family: 'MyriadProBlack', sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      line-height: 1.2;
+    }
+    .formulario-top p{
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 550;
+      text-align: center;
+      color: black;
+  }
+    
+    /* Form Styles - LAYOUT ORIGINAL */
+    #formulario-trabalho {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    
+    label {
+      font-family: 'MyriadProRegular', sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+      margin-bottom: 5px;
+      color: black;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    input[type="text"],
+    input[type="email"] {
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: rgb(224, 224, 220);
+      width: 100%;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      outline: none;
+      border-color: #e84b2a;
+      box-shadow: 0 0 0 2px rgba(232, 75, 42, 0.2);
+    }
+    
+    select {
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: rgb(224, 224, 220);
+      width: 100%;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+    
+    select:focus {
+      outline: none;
+      border-color: #e84b2a;
+      box-shadow: 0 0 0 2px rgba(232, 75, 42, 0.2);
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: nowrap;
+    }
+    
+    .form-row .form-group {
+      flex: 1 1 0%;
+      min-width: 0;
+    }
+    
+    /* LAYOUT BOTTOM - ESTRUTURA ORIGINAL EXATA */
+    .formulario-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 50px;
+      gap: 30px;
+      flex-wrap: nowrap;
+    }
+    
+    /* IMAGEM À ESQUERDA - ORIGINAL */
+    .imagem-box {
+      flex: 0 0 auto;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .imagem-box img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* FORMULÁRIO À DIREITA - ORIGINAL */
+    .form-extra {
+      flex: 1 1 0%;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    /* File Upload - ESTILO ORIGINAL */
+    input[type="file"] {
+      display: none;
+    }
+    
+    .btn-upload {
+      background-color: #e35f1d;
+      color: white;
+      font-size: 22px;
+      padding: 10px 20px;
+      display: inline-block;
+      cursor: pointer;
+      margin-top: 10px;
+      text-align: center;
+      white-space: nowrap;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-upload:hover {
+      background-color: #d64e15;
+      transform: translateY(-1px);
+    }
+    
+    
+    .file-name {
+      margin-left: 10px;
+      font-size: 13px;
+      color: black;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-top: 10px;
+      display: block;
+    }
+    
+    /* reCAPTCHA - POSICIONAMENTO ORIGINAL */
+    .recaptcha {
+      width: 100%;
+      overflow: visible;
+      display: flex;
+      justify-content: flex-start;
+      min-height: 78px;
+      min-width: 100px;
+      transform-origin: left top;
+      margin-bottom: 4px;
+    }
+    
+    .g-recaptcha {
+      max-width: 304px;
+      width: 100%;
+      display: flex;
+      margin: 0 auto;
+    }
+    
+    iframe[src*="recaptcha"] {
+      max-width: 100%;
+      max-height: calc(100vh - 40px);
+      box-sizing: border-box;
+    }
+    
+    iframe[src*="recaptcha"][src*="bframe"] {
+      min-height: 450px !important;
+      height: auto !important;
+    }
+    
+    /* Política e Termos - ORIGINAL */
+    .politica {
+      font-size: 13px;
+      color: black;
+      word-wrap: break-word;
+    }
+    
+    .politica a {
+      color: #e35f1d;
+      text-decoration: underline;
+      margin-bottom: 4px;
+    }
+    
+    .politica p {
+      margin-bottom: 5px;
+    }
+    
+    input[type="checkbox"] {
+      margin-right: 8px;
+      vertical-align: middle;
+      transform: scale(1.2);
+    }
+    
+    
+.btn-enviar{
+      background-color: #e35f1d;
+      color: white;
+      font-size: 22px;
+      padding: 10px 20px;
+      display: inline-block;
+      margin-top: 4px;
+      text-align: center;
+      white-space: nowrap;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+  .btn-enviar:hover {
+      background-color: #d64e15;
+      transform: translateY(-1px);
+    }
+    /* Modal - ESTILO ORIGINAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      overflow-y: auto;
+    }
+    
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 700px;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .modal-content h2 {
+      font-size: 22px;
+      color: #002244;
+      margin-bottom: 20px;
+    }
+    
+    .modal-content p {
+      color: #444;
+      line-height: 1.6;
+      margin: 20px 0;
+    }
+    
+    .modal .fechar {
+      background-color: #e35f1d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    
+    .modal-content span.fechar {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 26px;
+      color: #002244;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    
+
+    

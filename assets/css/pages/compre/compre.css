@@ -1,0 +1,116 @@
+/* ---------------------------------------------------------------------------
+   Pagina Televendas - Compre Online
+--------------------------------------------------------------------------- */
+main.compre-main {
+  position: relative;
+  max-width: 100%;
+  padding: 0 16%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap; /* Evita quebra para manter 50/50 em todas as plataformas */
+}
+
+/* Fundo */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*50-50 split */
+.compre-content {
+  width: 48%;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+
+section.compre {
+  width: 100%;
+  
+}
+
+section.compre .container {
+  width: 100%;
+}
+
+/* Seção de televendas - texto e lista de lojas */
+.compre h1 {
+  color: #e84b2a;
+  font-size: 30px;
+  font-weight: 900;
+  text-align: left;
+  font-family: 'MyriadProBlack', sans-serif;
+  margin-bottom: 15px;
+  margin-top: 15px; 
+}
+
+.compre p {
+  font-family: 'MyriadProRegular', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Botões WhatsApp - lista de lojas */
+.btn-whatsapp {
+  display: block;
+  width: 100%;
+  margin-bottom: 3px;
+  transition: transform 0.2s;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.btn-whatsapp:last-child {
+  margin-bottom: 3px;
+}
+
+.btn-whatsapp:hover {
+  transform: translateX(5px);
+}
+
+.btn-whatsapp img {
+  width: 95%;
+  height: auto;
+  display: block;
+}
+
+/* Seção do infográfico Drive Thru e Delivery (50%) */
+.infografico {
+  height:100%;
+  width: 50%;
+  margin-right: 60px;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.infografico img {
+  width: 121%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botão voltar */
+.botao-voltar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: 'MyriadPro', sans-serif;
+  font-size: 15px;
+  color: #003366;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  z-index: 10;
+  padding: 5px 5px;
+  margin-top: 10px;
+}
+
+ .botao-voltar:hover {
+      text-decoration: underline;
+    }

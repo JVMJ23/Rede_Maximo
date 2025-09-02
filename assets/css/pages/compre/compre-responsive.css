@@ -1,0 +1,208 @@
+@media screen and (max-width: 992px) {
+  main.compre-main {
+    min-height: 100px;
+    padding: 0 10%;
+  }
+  
+  .compre h1 {
+    font-size: 24px;
+  }
+  
+  .compre p {
+    font-size: 15px;
+  }
+  .infografico{
+    height: 100%;
+  }
+  .infografico img {
+    height: 100%;
+    width: 120%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: none;
+    background-color: #fff;
+  }
+  
+  main.compre-main {
+    padding: 0 5%;
+    /* Mantém o layout lado a lado */
+  }
+  
+  .compre-content, .infografico {
+    width: 45%; /* Mantém a divisão 50/50 */
+    padding-right: 5px;
+  }
+  
+  .compre h1 {
+    font-size: 20px;
+  }
+  
+  .compre p {
+    font-size: 12px;
+  }
+  .btn-whatsapp img {
+    width: 90%;
+  }
+  .infografico{
+    padding-top: 15px;
+  }
+  .infografico img {
+    width: 122%; 
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .compre-content{
+    width: 45%;
+  }
+  .infografico{
+    width: 75%;
+    margin-right: 2%;
+  }
+  main.compre-main {
+    padding: 0 3%;
+    margin: 5px auto;
+  }
+  
+  .compre h1 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .compre p {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  
+  .btn-whatsapp {
+    margin-bottom: 4px;
+  }
+  .btn-whatsapp img {
+    width: 100%;
+  }
+  .infografico img {
+    width: 101%; /* Reduz ainda mais para evitar overflow */
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .compre-content{
+    width: 49%;
+    padding-left: 2px;
+  }
+  .infografico{
+    width: 68%;
+    height: 100%;
+  }
+
+  .compre h1 {
+    font-size: 0.7rem;
+  }
+  
+  .compre p {
+    font-size: 0.4rem;
+  }
+  .btn-whatsapp img {
+    width: 95%;
+  }
+  .botao-voltar {
+    font-size: 8px;
+    padding-right: 20px;
+  }
+  
+  .infografico img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  main.compre-main{
+    width: 95%;
+    min-height: 200px;
+  }
+  .compre-content{
+    width: 46%;
+    padding-left: 5px;
+  }
+  .infografico{
+    width: 60%;
+    height: 100%;
+  }
+
+  .compre h1 {
+    font-size: 0.6rem;
+  }
+  
+  .compre p {
+    font-size: 0.37rem;
+    line-height: 1.4;
+  }
+  .btn-whatsapp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .infografico img {
+    padding-top: 10%;
+    width: 115%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .btn-whatsapp {
+    margin-bottom: 6px;
+  }
+  
+  .botao-voltar {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  
+  .compre-content{
+    width: 50%;
+    height: 100%;
+    padding-left: 2%;
+  }
+  .compre h1 {
+    font-size: 0.5rem;
+  }
+  
+  .compre p {
+    font-size: 0.3rem;
+    line-height: 1.3;
+  }
+  .btn-whatsapp img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+  }
+
+  .infografico{
+    width: 65%;
+    height: 100%;
+    padding-right: 1%;
+  }
+  .infografico img {
+    width: 110%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .btn-whatsapp {
+    margin-bottom: 5px;
+  }
+  
+  .botao-voltar {
+    padding-right: 26px;
+    font-size: 8px;
+  }
+}

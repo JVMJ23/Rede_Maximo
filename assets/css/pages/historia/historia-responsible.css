@@ -1,0 +1,422 @@
+/* Media query para telas de até 768px (tablets) */
+@media screen and (max-width: 768px) {
+    body {
+        background-image: none;
+    }
+        
+    
+    .historia-section {
+        max-width: 90%;
+        padding: 0 5px;
+        
+    }
+    
+    .titulo {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    
+    /* Mantendo a estrutura de três colunas ajustando proporções */
+    .column-left {
+        width: 30%;
+        gap: 50px;
+    }
+    .pilares-container {
+        width: 90%;
+        height: auto;
+    }
+    .pilares-container img{
+        width:90%;
+        height: auto;
+    }
+    .timeline-container {
+        width: 40%;
+    }
+    
+    .column-right {
+        width: 30%;
+        gap: 150px;
+    }
+    
+    .column-left img {
+        max-width: 120px;
+        margin-right: 25px;
+    }
+    
+    .column-right img {
+        max-width: 190px;
+    }
+    
+    .timeline-item p {
+        font-size: 14px;
+        letter-spacing: 1.3;
+    }
+    
+    .dot::after {
+        font-size: 18px;
+        left: -10px;
+        top: -40px;
+    }
+    
+    .timeline-item:last-child p {
+        font-size: 14px;
+    }
+    
+    .logo-final {
+        max-width: 200px;
+    }
+    
+    .botao-voltar {
+        font-size: 10px;
+        right: 50px;
+    }
+}
+
+/* Media query para telas de até 576px (smartphones) */
+@media screen and (max-width: 576px) {
+    
+    .historia-section {
+        max-width: 100%;
+    }
+    
+    .titulo {
+        font-size: 1.0rem;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .timeline-container {
+        width: 35%;
+    }
+
+    .pilares-container {
+        margin-top: 5px;
+        height:auto;
+        width: 90%;
+    }
+    .pilares-container img{
+        width:100%;
+        height:auto;
+    }
+    /* Mantendo a mesma estrutura mas reduzindo mais os tamanhos */
+    .column-left {
+        width: 30%;
+    }
+    
+    .column-left img {
+        max-width: 90px;
+        margin-right: 25px;
+    }
+    
+    .column-right {
+        gap: 110px;
+        width: 30%;
+    }
+    
+    .column-right img {
+        max-width: 180px;
+    }
+    
+    .timeline-item::before {
+        width: 30px;
+        height: 30px;
+        left: -35px;
+    }
+    
+    .dot {
+        width: 20px;
+        height: 20px;
+        left: -30px;
+    }
+    
+    .dot::after {
+        font-size: 16px;
+        left: -5px;
+        top: -35px;
+    }
+    
+    .timeline-item p {
+        font-size: 10px;
+        padding: 2px;
+    }
+    
+    .timeline-item:last-child p {
+        font-size: 10px;
+    }
+    
+    .logo-final {
+        max-width: 180px;
+        margin-left: -90px;
+    }
+    
+    .botao-voltar {
+        right: 50px;
+        font-size: 11px;
+    }
+}
+
+/* Media query para telas de até 425px */
+@media screen and (max-width: 425px) {
+    .titulo {
+        font-size: 1.0rem;
+        margin-bottom: 10px;
+    }
+    
+    .historia-grid {
+        flex-wrap: nowrap;
+    }
+    
+    .timeline-container {
+        width: 45%;
+        padding-left: 15px;
+        border-left: 1px solid #003366;
+    }
+    .pilares-container {
+        height:auto;
+        width: 80%;
+    }
+    .pilares-container img{
+        width:100%;
+        height: auto;
+    }
+    .column-left {
+        width: 30%;
+        gap: 40px;
+    }
+    
+    .column-left img {
+        max-width: 60px;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+    
+    .column-right {
+        width: 30%;
+        gap: 85px;
+    }
+    
+    .column-right img {
+        max-width: 85px;
+        margin-top: 5px;
+        margin-left: 2px;
+    }
+    
+    .timeline-item {
+        margin-bottom: 20px;
+    }
+    
+    .timeline-item p {
+        font-size: 10px;
+        text-align: left;
+        line-height: 1.3;
+        letter-spacing: 1.2;
+        padding:2px;
+    }
+    
+    .timeline-item::before {
+        width: 18px;
+        height: 18px;
+        left: -22px;
+        top: -2px;
+    }
+    
+    .dot {
+        width: 12px;
+        height: 12px;
+        left: -19px;
+    }
+    
+    .dot::after {
+        font-size: 10px;
+        left: -5px;
+        top: -20px;
+    }
+    
+    .logo-final {
+        max-width: 110px;
+        margin-left: -60px;
+    }
+    
+    .timeline-item:last-child p {
+        font-size: 10px;
+        text-align: left;
+    }
+    
+    .botao-voltar {
+        right: 20px;
+        font-size: 8px;
+        bottom: 0px;
+    }
+}
+
+/* Media query para telas de até 375px */
+@media screen and (max-width: 375px) {
+    .titulo {
+        font-size: 0.85rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .timeline-container {
+        width: 45%;
+        padding-left: 10px;
+    }
+    .pilares-container {
+        margin-top: 5px;
+        height:auto;
+        width: 90%;
+    }
+    .pilares-container img{
+        width:100%;
+        height:auto;
+    }
+    .column-left {
+        width: 30%;
+        gap:60px;
+    }
+    
+    .column-right {
+        width: 30%;
+        gap:70px;
+    }
+    
+    .column-left img {
+        max-width: 50px;
+        margin-right: 15px;
+    }
+    
+    .column-right img {
+        max-width: 95px;
+        margin-left :1px;
+    }
+    
+    .timeline-item p {
+        letter-spacing: 1.5;
+        font-size: 9.5px;
+        padding:1px;
+    }
+    
+    .timeline-item::before {
+        width: 16px;
+        height: 16px;
+        left: -20px;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
+        left: -17px;
+    }
+    
+    .dot::after {
+        font-size: 9px;
+        left: -5px;
+        top: -18px;
+    }
+    
+    .logo-final {
+        max-width: 90px;
+        margin-left: -55px;
+    }
+    
+    .timeline-item:last-child p {
+        font-size: 10px;
+    }
+    
+    .botao-voltar {
+        bottom: 0px;
+        right: 15px;
+        font-size: 8px;
+    }
+}
+
+/* Media query para telas de até 320px */
+@media screen and (max-width: 320px) {
+    
+    .historia-section {
+        margin-bottom: 0;
+    }
+    .titulo {
+        font-size: 0.7rem;
+    }
+    
+    .pilares-container {
+        width: 80%;
+        margin-bottom: 0;
+    }
+    .pilares-container img{
+        width:90%;
+        height: auto;
+    }
+    .timeline-container {
+        width: 50%;
+        padding-left: 10px;
+    }
+    
+    .column-left {
+        width: 30%;
+        gap: 55px;
+    }
+    
+    .column-right {
+        width: 35%;
+        gap: 50px;
+    }
+    
+    .column-left img {
+        max-width: 65px;
+        margin-right: 10px;
+    }
+    
+    .column-right img {
+        max-width: 90px;
+        margin-left: 3px;
+    }
+    
+    .timeline-item {
+        margin-bottom: 15px;
+    }
+    
+    .timeline-item p {
+        font-size: 8px;
+        letter-spacing: 1.3;
+        padding: 2px;
+        line-height: 1.5;
+    }
+    
+    .timeline-item::before {
+        width: 14px;
+        height: 14px;
+        left: -18px;
+        top: -1px;
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+        left: -15px;
+    }
+    
+    .dot::after {
+        font-size: 8px;
+        left: -4px;
+        top: -16px;
+    }
+    
+    .logo-final {
+        max-width: 80px;
+        margin-left: -50px;
+    }
+    
+    .timeline-item:last-child p {
+        font-size: 8px;
+        letter-spacing: 1.1;
+    }
+    
+    .botao-voltar {
+        right: 10px;
+        font-size: 6px;
+        bottom: 0px;
+    }
+}

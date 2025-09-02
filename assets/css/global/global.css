@@ -1,0 +1,54 @@
+@import url(normalize.css);
+@import url(footer.css);
+@import url(header.css);
+@import url(fonts.css);
+@import url(footer-responsive.css);
+@import url(header-responsive.css);
+
+/* Melhorar foco para navegação por teclado */
+a:focus, 
+button:focus, 
+input:focus, 
+select:focus, 
+textarea:focus {
+  outline: 2px solid #e84b2a;
+  outline-offset: 2px;
+}
+
+/* Textos de ajuda do formulário */
+.form-help {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Estados de erro para acessibilidade */
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+/* Skip link para navegação por teclado */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Melhorar contraste em botões */
+.btn-upload:focus,
+.slider-controls button:focus {
+  background-color: #c73e1d;
+  outline: 2px solid #fff;
+}
