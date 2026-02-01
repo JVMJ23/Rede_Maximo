@@ -25,6 +25,12 @@ h1 {
   padding-top: 30px;
   margin-bottom: 30px;
 }
+h2{
+  text-align: center;
+  font-family: 'MyriadProRegular', sans-serif;
+  font-size: 1.0rem;
+  color: #e84b2a;
+}
 
 /* Grid de lojas -
 --------------------------------------------------------------------------- */
@@ -74,11 +80,12 @@ h1 {
 }
 
 .loja img {
-  display: block;
+  display: block ;
+  object-fit: contain;
   width: 100%;
   height: auto;
 }
-
+ 
 /* Mapa de atuação - ajustado para ocupar toda a altura */
 .mapa {
   background-color: white;
