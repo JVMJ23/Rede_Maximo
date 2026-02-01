@@ -2,7 +2,7 @@
 const ofertasData = [
     {
       id: 1,
-      titulo: "Confira as ofertas desta Semana válidas para toda a Rede Máximo de Supermercados",
+      titulo: "Confira as ofertas desta semana válidas para toda a Rede Máximo de Supermercados",
       imagem: "assets/images/pages/pages/ofertas/folheto.png",
       alt: "Folheto promocional com as ofertas válidas no momento",
       ativa: true
