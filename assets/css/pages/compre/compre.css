@@ -71,8 +71,8 @@ section.compre .container {
 }
 
 .btn-whatsapp img {
-  width: 90%;
-  height: auto;
+  width: 85%;
+  height: fit-content;
   display: block;
 }
 
