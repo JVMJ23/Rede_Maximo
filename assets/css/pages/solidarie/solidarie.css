@@ -74,7 +74,7 @@ body {
 }
 
 .institution img {
-  width: 60px;
+  width: 65px;
   margin-right: 10px;
   flex-shrink: 0; /* Impede que a imagem encolha */
 }

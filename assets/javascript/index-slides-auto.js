@@ -1,4 +1,4 @@
-// Dados dos slides da index
+// Dados dos slides da página principal
 const slidesData = [
   {
     id: 1,
