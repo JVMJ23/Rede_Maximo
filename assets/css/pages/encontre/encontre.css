@@ -81,7 +81,7 @@ h2{
 
 .loja img {
   display: block ;
-  object-fit: scale-down;
+  object-fit: contain;
   width: 95%;
   height: auto;
   aspect-ratio: 16/9;
