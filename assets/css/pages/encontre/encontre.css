@@ -23,7 +23,7 @@ h1 {
   font-weight: 900;
   text-align: center;
   padding-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 h2{
   text-align: center;
@@ -81,9 +81,10 @@ h2{
 
 .loja img {
   display: block ;
-  object-fit: scale-down;
+  object-fit: contain;
   width: 95%;
   height: auto;
+  aspect-ratio: 16/9;
 }
  
 /* Mapa de atuação - ajustado para ocupar toda a altura */

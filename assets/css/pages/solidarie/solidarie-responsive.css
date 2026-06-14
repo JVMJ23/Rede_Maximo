@@ -16,7 +16,7 @@
   .institutions,
   .institution,
   .mensagem-final {
-    max-width: 90%;
+    max-width: 88%;
   }
 }
 
@@ -41,8 +41,9 @@
   }
   
   .institution img {
-    width: 50px;
+    width: 55px;
     margin-right: 10px;
+    align-items: center;
   }
   
   .container p,
@@ -69,7 +70,8 @@
   }
   
   .institution img {
-    width: 40px;
+    width: 55px;
+    
   }
   
 
