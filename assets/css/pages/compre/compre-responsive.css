@@ -84,6 +84,7 @@
   }
   .btn-whatsapp img {
     width: 100%;
+    object-fit: contain;
   }
   .infografico img {
     width: 101%; /* Reduz ainda mais para evitar overflow */
@@ -109,6 +110,7 @@
   }
   .btn-whatsapp img {
     width: 95%;
+    object-fit: contain;
   }
   .botao-voltar {
     font-size: 8px;
