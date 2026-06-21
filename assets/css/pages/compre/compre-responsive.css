@@ -29,6 +29,7 @@
   
   main.compre-main {
     padding: 0 5%;
+    align-items: flex-start !important;
     /* Mantém o layout lado a lado */
   }
   
@@ -46,6 +47,7 @@
   }
   .btn-whatsapp img {
     width: 85%;
+    height: auto;
   }
   .infografico{
     padding-top: 15px;
