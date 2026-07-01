@@ -70,7 +70,7 @@ h2{
 }
 
 .loja:hover {
-  transform: translatey(3px);
+  transform: translateY(3px) scale(1.03);
 }
 
 .loja a {
@@ -85,6 +85,7 @@ h2{
   width: 95%;
   height: auto;
   aspect-ratio: 16/9;
+  transform: scale(1.05);
 }
  
 /* Mapa de atuação - ajustado para ocupar toda a altura */
@@ -103,8 +104,8 @@ h2{
   object-fit: contain; /* Mantém a proporção sem distorção */
 }
 .loja.destacada {
-    border-color: 5px #003366;
-    box-shadow: 0 6px 20px #003366;
+    border-color: 7px #003366;
+    transform:scale(1.09);
 }
 .loja:hover:not(.destacada) {
   transform: translateY(-2px);
