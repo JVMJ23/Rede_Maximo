@@ -123,8 +123,8 @@ function makeMapResponsive() {
     if (!mapImage || !areas.length) return;
     
     // Defina o tamanho original da sua imagem aqui
-    const originalWidth = 745;  // SUBSTITUA pelo tamanho real
-    const originalHeight = 955; // SUBSTITUA pelo tamanho real
+    const originalWidth = 2617;  // SUBSTITUA pelo tamanho real
+    const originalHeight = 3529; // SUBSTITUA pelo tamanho real
     
     function updateCoords() {
         const currentWidth = mapImage.offsetWidth;

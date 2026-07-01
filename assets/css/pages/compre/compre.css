@@ -45,7 +45,7 @@ section.compre .container {
 
 .compre p {
   font-family: 'MyriadProRegular', sans-serif;
-  font-size: 16px;
+  font-size: 1.0rem;
   font-weight: 400;
   text-align: left;
   margin-bottom: 20px;
@@ -71,9 +71,10 @@ section.compre .container {
 }
 
 .btn-whatsapp img {
-  width: 89%;
-  height: min-content;
+  width: 90%;
+  height: auto;
   display: block;
+  object-fit: contain;
 }
 
 /* Seção do infográfico Drive Thru e Delivery (50%) */
