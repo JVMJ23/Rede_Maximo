@@ -43,15 +43,24 @@
     max-width: 18px;
   }
   
+  .header-mid-container nav ul {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
   .header-mid-container nav ul li a {
     font-size: 11px;
     padding: 1px 4px;
     display: flex;
     align-items: center;
+    height: auto;
+    min-height: 30px;
   }
   
   .header-bottom-container nav ul {
     gap: 5px;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
   
   .header-bottom-container nav ul li {
@@ -61,6 +70,8 @@
   .header-bottom-container nav ul li a {
     font-size: 12px;
     padding: 1px 5px;
+    height: auto;
+    min-height: 30px;
   }
   
   .header-bottom-container nav ul li a img {
@@ -84,11 +95,15 @@
   
   .header-mid-container nav ul {
     padding: 0 5%;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
   
   .header-mid-container nav ul li a {
     font-size: 8px;
     padding: 2px 2px;
+    height: auto;
+    min-height: 26px;
   }
   
   .header-bottom-container {
@@ -97,6 +112,8 @@
   
   .header-bottom-container nav ul {
     gap: 2px;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
   
   .header-bottom-container nav ul li {
@@ -106,6 +123,8 @@
   .header-bottom-container nav ul li a {
     font-size: 8px;
     padding: 2px;
+    height: auto;
+    min-height: 26px;
   }
   
   .header-bottom-container nav ul li a img {
@@ -141,12 +160,16 @@
   
   .header-mid-container nav ul {
     padding: 0 1%;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
   
   .header-mid-container nav ul li a {
     font-size: 9px;
     padding: 1px 5px;
     border-right: 1px solid rgba(255, 255, 255, 0.5);
+    height: auto;
+    min-height: 24px;
   }
   
   .header-bottom {
@@ -159,11 +182,15 @@
   
   .header-bottom-container nav ul {
     gap: 1px;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
   
   .header-bottom-container nav ul li a {
     font-size: 10px;
     padding: 3px 1px;
+    height: auto;
+    min-height: 24px;
   }
   
   .header-bottom-container nav ul li a img {
@@ -204,12 +231,16 @@
   
   .header-mid-container nav ul {
     padding: 0 2%;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
   
   .header-mid-container nav ul li a {
     font-size: 8px;
     padding: 1px 3px;
     border-right: 1px solid rgba(255, 255, 255, 0.5);
+    height: auto;
+    min-height: 20px;
   }
   
   .header-bottom {
@@ -223,11 +254,15 @@
   
   .header-bottom-container nav ul {
     gap: 1px;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
   
   .header-bottom-container nav ul li a {
     font-size: 9px;
     padding: 2px 2px;
+    height: auto;
+    min-height: 19px;
   }
   
   .header-bottom-container nav ul li a img {
@@ -265,11 +300,17 @@
     padding: 3px 0;
   }
   
-  
+  .header-mid-container nav ul {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
   .header-mid-container nav ul li a {
     font-size: 0.4rem;
     padding: 3px 5px;
     border-right: 1px solid rgba(255, 255, 255, 0.5);
+    height: auto;
+    min-height: 20px;
   }
   
   .header-bottom {
@@ -282,11 +323,15 @@
   
   .header-bottom-container nav ul {
     gap: 1px;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
   
   .header-bottom-container nav ul li a {
     font-size: 0.45rem;
     padding: 3px 2px;
+    height: auto;
+    min-height: 18px;
   }
   
   .header-bottom-container nav ul li a img {
@@ -332,12 +377,16 @@
   
   .header-mid-container nav ul {
     padding: 0 2%;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
   
   .header-mid-container nav ul li a {
     font-size: 0.4rem;
     padding: 1px 2px;
     border-right: 1px solid rgba(255, 255, 255, 0.5);
+    height: auto;
+    min-height: 15px;
   }
   
   .header-bottom {
@@ -346,16 +395,20 @@
   }
   
   .header-bottom-container {
-    flex-wrap:wrap ;
+    flex-wrap: nowrap;
   }
   
   .header-bottom-container nav ul {
     gap: 1px;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
   
   .header-bottom-container nav ul li a {
-    font-size: 0.43rem;
+    font-size: 0.40rem;
     padding: 1px 1px;
+    height: auto;
+    min-height: 15px;
   }
   
   .header-bottom-container nav ul li a img {

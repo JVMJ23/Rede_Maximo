@@ -13,6 +13,7 @@ body {
 }
 
 /* Área que agrupa o slider e o banner lateral */
+
 .index-main-content {
   display: flex;
   width: 70%;
@@ -111,7 +112,7 @@ body {
 /* Banner lateral fixo (Compre Online) */
 .compre-banner {
   display: flex;
-  width: 40%;
+  width: 42%;
   height: 100%;
   align-items: center;
   justify-content: center;
@@ -138,8 +139,15 @@ body {
   padding: 0;
 }
 
+.meumaxclube-banner{
+  width:68%;
+  justify-content:center;
+  display:flex;
+  margin:10px auto 0;
+  background-color:rgb(224, 224, 220);
+  box-sizing: border-box;
+}
 
-.meumaxclube-banner,
 .folheto-container,
 .atacado-banner {
   background-color:rgb(224, 224, 220);
@@ -169,9 +177,7 @@ body {
   margin: 0 auto;
 }
 
-.meumaxclube-banner:hover{
-  transform: scale(1.02);
-}
+
 
 /* Folheto Ofertas */
 .folheto-container {
@@ -255,16 +261,18 @@ body {
 }
 
 .botao-voltar-container {
+  box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
-  width: 80%;
-  margin: 5px 0;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0;
 }
 
 .botao-voltar {
-  width: max-content;
+  width: 100%;
   font-family: 'MyriadProRegular', sans-serif;
-  font-size: 14px;
+  font-size: 11px;
   color: #003366;
   cursor: pointer;
   text-decoration: none;
