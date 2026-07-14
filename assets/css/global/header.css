@@ -12,9 +12,9 @@
 
 /* Header Top (Azul) */
 .header-top {
-  background-image: url(../../images/global/background-blue.webp);
-  background-repeat: repeat-x;
-  background-size: auto 102%;
+  background-image: url(../../images/global/footer-teste.png);
+  background-repeat: repeat;
+  background-size: 65%;
   background-color: #183e85;
   color: #ffffff;
   padding: 3px 0;
