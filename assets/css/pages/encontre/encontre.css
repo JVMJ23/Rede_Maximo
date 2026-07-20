@@ -155,6 +155,7 @@ h2{
 }
 
 .banner-lojas .botao-voltar {
+  padding-left: 20px;
   padding-right: 45px;
   font-family: 'MyriadRegular', sans-serif;
   font-size: 12px; 

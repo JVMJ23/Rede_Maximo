@@ -112,7 +112,7 @@
   }
 
   .compre-banner {
-    width: %;
+    width: 50%;
   }
 
   .slider-controls span {
@@ -125,7 +125,7 @@
   .call-button a {
     width: calc(100vw / 7);
   }
-}
+
 
 @media screen and (max-width: 576px) {
   body {
@@ -168,4 +168,5 @@
   .ofertas-botao a {
     font-size: 8px;
   }
+}
 }

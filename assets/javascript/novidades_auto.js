@@ -1,23 +1,22 @@
-// Dados das novidades (ID + conteúdo básico)
-const novidadesData = [
-  {
-    id: 1,
-    titulo: "Festival Vegano 2025",
-    descricao1: "Bem-vindo ao nosso Festival Vegano, o evento perfeito para quem busca produtos naturais e veganos com preços incríveis. Preparamos uma seleção de ofertas e promoções para você encher o carrinho e experimentar novos sabores.",
-    descricao2: "",
-    imagem: "assets/images/pages/pages/index/festival vegano-02.png",
-    ativa: true
-  },
-  {
-    id: 2,
-    titulo: "FoliaMax 2025",
-    descricao1: "O calor do carnaval já está no ar, e com ele, a nossa seleção de ofertas do FoliaMax para você aproveitar a folia sem preocupações.",
-    descricao2: "",
-    imagem: "assets/images/pages/pages/index/foliamax-02.png", 
-    ativa: true 
-  },
-  // Adicione mais novidades aqui conforme necessário
-];
+let novidadesData = [];
+
+// Carregar do JSON
+fetch('assets/data/novidades.json')
+  .then(response => {
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  })
+  .then(data => {
+    novidadesData = data.novidades || [];
+    gerarNovidades();
+  })
+  .catch(error => {
+    console.error('Erro ao carregar novidades:', error);
+    const container = document.getElementById('novidades-container');
+    if (container) {
+      container.innerHTML = '<div class="novidade-card"><p style="text-align: center; color: #666;">Erro ao carregar novidades.</p></div>';
+    }
+  });
 
 // Função para gerar as novidades
 function gerarNovidades() {
@@ -37,16 +36,16 @@ function gerarNovidades() {
     return;
   }
   
-  // Gerar HTML 
+  // Gerar HTML com o padrão original
   container.innerHTML = novidadesAtivas.map(novidade => `
     <div class="novidade-card">
       <img src="${novidade.imagem}" loading="lazy" alt="${novidade.titulo}">
       <p>${novidade.descricao1}</p>
-      <p>${novidade.descricao2}</p>
+      ${novidade.descricao2 ? `<p>${novidade.descricao2}</p>` : ''}
     </div>
   `).join('');
   
-  console.log(`✅ ${novidadesAtivas.length} novidade(s) carregada(s) com CSS original`);
+  console.log(`✅ ${novidadesAtivas.length} novidade(s) carregada(s)`);
 }
 
 // Inicializar quando a página carregar
