@@ -35,6 +35,152 @@
       line-height: 1.3;
     }
 
+    .ofertas-subtitulo {
+      text-align: center;
+      color: #003366;
+      font-family: 'MyriadProRegular', sans-serif;
+      font-size: 18px;
+      margin: 0 0 24px;
+    }
+
+    .ofertas-vazio {
+      text-align: center;
+      color: #666;
+      padding: 30px 20px;
+      font-family: 'MyriadProRegular', sans-serif;
+      font-size: 17px;
+    }
+
+    .ofertas-cidades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 20px;
+    }
+
+    .oferta-cidade-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 52px;
+      border-radius: 10px;
+      padding: 10px 14px;
+      text-decoration: none;
+      font-family: 'MyriadProBlack', sans-serif;
+      font-size: 17px;
+      color: #ffffff;
+      background: linear-gradient(125deg, #0b2b65 25%, #e84b2a 65%);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      text-align: center;
+    }
+
+    .oferta-cidade-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.04);
+      box-shadow: 0 10px 20px rgba(0, 51, 102, 0.28);
+    }
+
+    .oferta-cidade-btn:focus-visible {
+      outline: 3px solid #003366;
+      outline-offset: 3px;
+    }
+
+    .oferta-cidade-btn--sem-folheto {
+      flex-direction: column;
+      gap: 4px;
+      background: linear-gradient(125deg, rgba(11, 43, 101, 0.72) 25%, rgba(232, 75, 42, 0.72) 65%);
+      cursor: not-allowed;
+      opacity: 0.9;
+      box-shadow: none;
+    }
+
+    .oferta-cidade-btn--sem-folheto:hover {
+      transform: none;
+      filter: none;
+      box-shadow: none;
+    }
+
+    .oferta-cidade-btn-msg {
+      display: block;
+      font-family: 'MyriadProRegular', sans-serif;
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    body.modal-oferta-open {
+      overflow: hidden;
+    }
+
+    .modal-oferta {
+      position: fixed;
+      inset: 0;
+      display: none;
+      z-index: 9999;
+    }
+
+    .modal-oferta.is-open {
+      display: block;
+    }
+
+    .modal-oferta-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.62);
+    }
+
+    .modal-oferta-content {
+      position: relative;
+      width: min(94vw, 980px);
+      max-height: 92vh;
+      margin: 3vh auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px 16px 18px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      overflow: auto;
+    }
+
+    .modal-oferta-fechar {
+      position: sticky;
+      top: 0;
+      float: right;
+      border: 0;
+      border-radius: 6px;
+      background: #e85531;
+      color: #fff;
+      font-family: 'MyriadProBlack', sans-serif;
+      font-size: 14px;
+      padding: 8px 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .modal-oferta-fechar:hover {
+      filter: brightness(1.06);
+    }
+
+    .modal-oferta-titulo {
+      margin: 4px 0 12px;
+      text-align: center;
+      color: #e85531;
+      font-family: 'MyriadProBlack', sans-serif;
+      font-size: 30px;
+      line-height: 1.2;
+      clear: both;
+    }
+
+    .modal-oferta-imagem {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
     .ofertas img {
       width: 100%;
       height: auto;

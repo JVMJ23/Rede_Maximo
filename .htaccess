@@ -21,11 +21,8 @@ RewriteRule ^produtos/carvaomax/?$ pages/produtosmax/carvaomax.html [L]
 RewriteRule ^produtos/aguamax/?$ pages/produtosmax/aguamax.html [L]
 RewriteRule ^produtos/ovospascoa/?$ pages/produtosmax/ovospascoa.html [L]
 
-# URLs amigáveis para receitas
-RewriteRule ^receitas/panacota/?$ pages/receitasmax/rec1-panacota.html [L]
-RewriteRule ^receitas/bacalhau/?$ pages/receitasmax/rec2-bacalhau.html [L]
-RewriteRule ^receitas/mousse/?$ pages/receitasmax/rec3-mousse.html [L]
-RewriteRule ^receitas/abobora/?$ pages/receitasmax/rec4-abobora.html [L]
+# URLs amigáveis para receitas (fallback para página de receita existente)
+RewriteRule ^receitas/(panacota|bacalhau|mousse|abobora)/?$ pages/receitasmax/receitasmax-index.html [L,QSA]
 
 # ===== HEADERS DE SEGURANÇA MÁXIMA =====
 <IfModule mod_headers.c>
@@ -84,12 +81,8 @@ RewriteRule ^receitas/abobora/?$ pages/receitasmax/rec4-abobora.html [L]
 </IfModule>
 
 # Cache especial para páginas que mudam mais
-<LocationMatch "/(ofertas|novidades)">
-    ExpiresActive On
-    ExpiresByType text/html "access plus 10 minutes"
-    ExpiresByType image/png "access plus 1 day"
-    ExpiresByType image/jpg "access plus 1 day"
-</LocationMatch>
+# Nota: <LocationMatch> pode não ser permitido em .htaccess em alguns hostings.
+# Mantemos apenas o cache geral para evitar erro 500 por diretiva inválida.
 
 # ===== COMPRESSÃO GZIP =====
 <IfModule mod_deflate.c>
@@ -205,7 +198,7 @@ ErrorDocument 500 /500.html
 <IfModule mod_headers.c>
     # Preload de recursos críticos
     Header add Link "</assets/css/global/global.css>; rel=preload; as=style"
-    Header add Link "</assets/images/global/logo-novo-02.png>; rel=preload; as=image"
+    Header add Link "</assets/images/global/logo-novo-02.webp>; rel=preload; as=image"
     
     # Prefetch para páginas importantes
     Header add Link "</ofertas.html>; rel=prefetch"
@@ -224,10 +217,8 @@ ErrorDocument 500 /500.html
 </IfModule>
 
 # ===== LOGS DE SEGURANÇA =====
-<IfModule mod_log_config.c>
-    LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"" combined
-    CustomLog logs/access.log combined
-</IfModule>
+# Nota: LogFormat/CustomLog devem ficar no VirtualHost (config do servidor),
+# não no .htaccess.
 
 # ===== FALLBACK PARA NAVEGADORES ANTIGOS =====
 <IfModule mod_headers.c>

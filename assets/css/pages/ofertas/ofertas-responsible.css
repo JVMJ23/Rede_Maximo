@@ -28,6 +28,25 @@
       .ofertas h1 {
         font-size: 25px;
       }
+
+      .ofertas-subtitulo {
+        font-size: 16px;
+      }
+
+      .ofertas-cidades-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .modal-oferta-content {
+        width: 96vw;
+        max-height: 94vh;
+        margin: 2vh auto;
+        padding: 12px;
+      }
+
+      .modal-oferta-titulo {
+        font-size: 22px;
+      }
     }
 
     /* 576px - Tablets pequenos e smartphones grandes */
@@ -44,6 +63,28 @@
       .ofertas h1 {
         font-size: 18px;
         margin-bottom: 15px;
+      }
+
+      .ofertas-subtitulo {
+        font-size: 15px;
+      }
+
+      .ofertas-cidades-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .oferta-cidade-btn {
+        font-size: 15px;
+        min-height: 48px;
+      }
+
+      .modal-oferta-fechar {
+        font-size: 12px;
+        padding: 7px 9px;
+      }
+
+      .modal-oferta-titulo {
+        font-size: 19px;
       }
       
       .botao-voltar {
@@ -65,6 +106,10 @@
       .ofertas h1 {
         font-size: 16px;
         margin-bottom: 12px;
+      }
+
+      .ofertas-subtitulo {
+        font-size: 14px;
       }
     }
 

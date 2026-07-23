@@ -1,28 +1,58 @@
-// Dados dos slides da página principal
-const slidesData = [
+const SLIDES_JSON_PATH = 'assets/data/index-slides.json';
+
+const slidesFallback = [
   {
     id: 1,
-    imagem: "assets/images/pages/pages/index/festival vegano-02.png",
-    alt: "Imagem descritiva do Festival Vegano",
-    link: "novidades.html"
+    imagem: 'assets/images/pages/pages/index/festival vegano-02.png',
+    alt: 'Imagem descritiva do Festival Vegano',
+    link: 'novidades.html'
   },
   {
     id: 2,
-    imagem: "assets/images/pages/pages/index/foliamax-02.png",
-    alt: "Imagem descritiva do Folia-Max",
-    link: "novidades.html"
+    imagem: 'assets/images/pages/pages/index/foliamax-02.png',
+    alt: 'Imagem descritiva do Folia-Max',
+    link: 'novidades.html'
   }
 ];
 
+function normalizarSlides(lista) {
+  return Array.isArray(lista)
+    ? lista.filter(slide => slide && slide.imagem && slide.link).map((slide, index) => ({
+        id: slide.id || index + 1,
+        imagem: slide.imagem,
+        alt: slide.alt || 'Slide da página inicial',
+        link: slide.link
+      }))
+    : [];
+}
+
 // Função para gerar e controlar os slides
-function gerarSlides() {
+async function gerarSlides() {
   const slider = document.querySelector('.banner-slider');
   
   if (!slider) return;
   
   let currentSlide = 0;
-  const slides = slidesData;
+  let slides = slidesFallback;
+
+  try {
+    const response = await fetch(SLIDES_JSON_PATH, { cache: 'no-store' });
+    if (response.ok) {
+      const payload = await response.json();
+      const slidesDoJson = normalizarSlides(payload.slides);
+      if (slidesDoJson.length > 0) {
+        slides = slidesDoJson;
+      }
+    }
+  } catch (error) {
+    console.warn('Não foi possível carregar o JSON dos slides. Usando fallback local.', error);
+  }
+
   const totalSlides = slides.length;
+
+  if (totalSlides === 0) {
+    return;
+  }
   
   // Renderiza os slides no HTML
   function renderSlides() {
