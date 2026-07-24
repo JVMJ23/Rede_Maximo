@@ -1,22 +1,19 @@
-/* Definições base do botão voltar */
+/* Mantem a identidade visual do desktop em qualquer tela, ajustando escala e proporcao. */
 .botao-voltar-container {
   display: flex;
   justify-content: flex-end;
-  width: 80%;
-  margin: 5px 0;
+  margin: 5px auto;
 }
 
 .botao-voltar {
   width: max-content;
   font-family: 'MyriadProRegular', sans-serif;
-  font-size: 14px;
   color: #003366;
   cursor: pointer;
   text-decoration: none;
 }
 
-/* Media queries mínimas para garantir a visualização em telas pequenas */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
   .index-main-content,
   .meumaxclube-banner,
   .folheto-container,
@@ -24,235 +21,152 @@
   .botao-voltar-container {
     width: 80%;
   }
-  .index-main-content{
-    height: 300px;
-    width: 80%;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    background-image:none;
+    background-size: clamp(520px, 55vw, 900px) auto;
   }
-  .banner-slider{
-    width: 70%;
+
+  .index-main-content,
+  .meumaxclube-banner,
+  .folheto-container,
+  .atacado-banner,
+  .botao-voltar-container {
+    width: 82%;
   }
+
+  .index-main-content {
+    height: clamp(220px, 25vw, 300px);
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .banner-slider {
+    width: 60%;
+  }
+
+  .compre-banner {
+    width: 37.5%;
+  }
+
   .slider-controls span {
-    font-size: 1.2rem;
+    font-size: clamp(22px, 2.4vw, 36px);
+    padding: 8px;
   }
-  .compre-banner{
-    width: 50%;
-  }
-  .botao-voltar {
-    font-size: 0.7rem;
+
+  .botao-voltar,
+  .ofertas-botao a {
+    font-size: clamp(10px, 1.1vw, 12px);
   }
 }
 
 @media screen and (max-width: 992px) {
   body {
-    background-image: none;
-    
+    background-size: clamp(420px, 70vw, 700px) auto;
   }
+
   .index-main-content,
   .meumaxclube-banner,
   .folheto-container,
   .atacado-banner,
   .botao-voltar-container {
-    width: 85%;
+    width: 88%;
   }
-  .index-main-content{
-    height: 100%;
+
+  .index-main-content {
+    height: clamp(180px, 28vw, 250px);
+    margin-top: 14px;
+    margin-bottom: 14px;
   }
-  .banner-slider, .compre-banner{
-   height: 200px;
+
+  .slider-indicators {
+    bottom: 8px;
+    gap: 4px;
   }
-  .banner-slider{
-    width: 80%;
-  }
-  .slider-controls span {
-    font-size: 0.9rem;
-  }
-  .compre-banner{
-    width: 38%;
-  }
-  .botao-voltar {
-    font-size: 0.7rem;
+
+  .slider-indicators .indicator {
+    width: 6px;
+    height: 6px;
   }
 }
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .index-main-content,
+  .meumaxclube-banner,
+  .folheto-container,
+  .atacado-banner,
+  .botao-voltar-container {
+    width: 90%;
+  }
 
   .index-main-content {
-    gap: 3px;
+    height: clamp(145px, 33vw, 210px);
+    gap: 6px;
+    padding: 6px;
   }
-  .banner-slider, .compre-banner{
-    height: 160px;
+
+  .banner-slider {
+    width: 60%;
   }
-  .slider-indicators .indicator {
-    width: 5px;
-    height: 5px;
+
+  .compre-banner {
+    width: 50%;
   }
+
+  .slider-controls span {
+    font-size: clamp(18px, 3vw, 28px);
+    padding: 6px;
+  }
+
   .side-images img,
   .call-button img,
   .call-button a {
     width: calc(100vw / 7);
   }
-}
+
 
 @media screen and (max-width: 576px) {
+  body {
+    background-size: clamp(300px, 80vw, 520px) auto;
+  }
+
+  .index-main-content,
+  .meumaxclube-banner,
+  .folheto-container,
+  .atacado-banner,
+  .botao-voltar-container {
+    width: 94%;
+  }
+
   .index-main-content {
-    width: 85%;
-    height: 100%;
-    padding:0;
+    height: clamp(120px, 36vw, 170px);
+    gap: 4px;
+    padding: 4px;
   }
-  .banner-slider, .compre-banner{
-    height: 110px;
+
+  .banner-slider {
+    width: 70%;
   }
-  .banner-slider{
-    width: 69%;
-  }
-  .slider-controls span {
-    font-size: 0.9rem;
-  }
-  .slider-indicators .indicator {
-    width: 4px;
-    height: 4px;
-  }
-  .compre-banner{
+
+  .compre-banner {
     width: 30%;
   }
-  .botao-voltar-container {
-    width: 85%;
-  }
-  .botao-voltar {
-    right:50px;
-    font-size: 5px;
-  }
-}
-@media screen and (max-width: 480px) {
-    .index-main-content {
-    width: 85%;
-    height: 100%;
-    padding:0;
-  }
-  .banner-slider, .compre-banner{
-    height: 100px;
-  }
-  .banner-slider{
-    width: 70%;
-  }
-  .banner-slider img{
-    width: 100%;
-  } 
-  .slider-controls span {
-    font-size: 0.9rem;
-  }
-  .slider-indicators .indicator {
-    width: 4px;
-    height: 4px;
-  }
-  .compre-banner{
-    width: 34%;
-  }
-  .botao-voltar-container {
-    width: 85%;
-  }
-  .botao-voltar {
-    right:50px;
-    font-size: 5px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .index-main-content {
-    width: 85%;
-    height: 100%;
-    padding:0;
-  }
-  .banner-slider, .compre-banner{
-    height: 95px;
-  }
-  .banner-slider{
-    width: 70%;
-  }
-  .banner-slider img{
-    width: 100%;
-  } 
-  .slider-controls span {
-    font-size: 0.8rem;
-  }
-  .slider-indicators .indicator {
-    width: 4px;
-    height: 4px;
-  }
-  .compre-banner{
-    width: 34%;
-  }
-  .botao-voltar-container {
-    width: 85%;
-  }
-  .botao-voltar {
-    right:50px;
-    font-size: 5px;
-  }
-}
 
-@media screen and (max-width: 375px) {
-    .index-main-content {
-    width: 85%;
-    height: 100%;
-    padding:0;
-  }
-  .banner-slider, .compre-banner{
-    height: 85px;
-  }
-  .banner-slider{
-    width: 70%;
-  }
-  .banner-slider img{
-    width: 100%;
-  } 
   .slider-controls span {
-    font-size: 0.8rem;
+    font-size: clamp(14px, 3.8vw, 22px);
+    padding: 4px;
   }
+
   .slider-indicators .indicator {
-    width: 4px;
-    height: 4px;
+    width: 5px;
+    height: 5px;
   }
-  .compre-banner{
-    width: 34%;
-  }
-  .botao-voltar-container {
-    width: 85%;
-  }
-  .botao-voltar {
-    right:50px;
-    font-size: 5px;
+
+  .botao-voltar,
+  .ofertas-botao a {
+    font-size: 8px;
   }
 }
-@media screen and (max-width: 320px) {
-  .index-main-content {
-    width: 85%;
-    height: 100%;
-    padding:0;
-  }
-  .banner-slider, .compre-banner{
-    height: 80px;
-  }
-  .banner-slider{
-    width: 70%;
-  }
-  .banner-slider img{
-    width: 100%;
-  } 
-  .slider-controls span {
-    font-size: 0.7rem;
-  }
-  .slider-indicators .indicator {
-    width: 4px;
-    height: 4px;
-  }
-  .compre-banner{
-    width: 34%;
-  }
-  .botao-voltar-container {
-    width: 85%;
-  }
-  .botao-voltar {
-    right:50px;
-    font-size: 5px;
-  }
 }

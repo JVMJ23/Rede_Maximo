@@ -1,0 +1,89 @@
+{
+  "titulo": "Ofertas da semana por cidade",
+  "ofertasPorCidade": [
+    {
+      "id": 1,
+      "cidade": "SJC - Bosque dos Eucaliptos",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Bosque dos Eucaliptos.",
+      "ativa": true
+    },
+    {
+      "id": 2,
+      "cidade": "SJC - Jardim Aquarius",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Jardim Aquarius.",
+      "ativa": true
+    },
+    {
+      "id": 3,
+      "cidade": "SJC - Urbanova",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Urbanova.",
+      "ativa": true
+    },
+    {
+      "id": 4,
+      "cidade": "SJC - Vila Industrial",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Vila Industrial.",
+      "ativa": true
+    },
+    {
+      "id": 5,
+      "cidade": "SJC - Vila Tesouro",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Vila Tesouro.",
+      "ativa": true
+    },
+    {
+      "id": 6,
+      "cidade": "Guará - Parque do Sol",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Parque do Sol.",
+      "ativa": true
+    },
+    {
+      "id": 7,
+      "cidade": "Campos do Jordão",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Campos do Jordão.",
+      "ativa": true
+    },
+    {
+      "id": 8,
+      "cidade": "Guaratinguetá - Avenida JK",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Guaratinguetá.",
+      "ativa": true
+    },
+    {
+      "id": 9,
+      "cidade": "Lorena",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Lorena.",
+      "ativa": true
+    },
+    {
+      "id": 10,
+      "cidade": "Ubatuba",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Ubatuba.",
+      "ativa": true
+    },
+    {
+      "id": 11,
+      "cidade": "Tremembé",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Tremembé.",
+      "ativa": true
+    },
+    {
+      "id": 12,
+      "cidade": "Jacareí - Villa Branca",
+      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Jacareí.",
+      "ativa": true
+    }
+  ]
+}

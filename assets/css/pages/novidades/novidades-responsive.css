@@ -26,7 +26,7 @@
       }
       
       .novidades-scroll-area {
-        max-height: 450px;
+        max-height: none;
       }
     }
 
@@ -49,7 +49,7 @@
       }
       
       .novidades-scroll-area {
-        max-height: 400px;
+        max-height: none;
       }
     }
 
@@ -75,7 +75,7 @@
       }
       
       .novidades-scroll-area {
-        max-height: 350px;
+        max-height: none;
       }
     }
 
@@ -97,7 +97,7 @@
       }
       
       .novidades-scroll-area {
-        max-height: 300px;
+        max-height: none;
       }
     }
 
@@ -128,7 +128,7 @@
       }
       
       .novidades-scroll-area {
-        max-height: 250px;
+        max-height: none;
         min-height: 150px;
       }
     }

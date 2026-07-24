@@ -1,0 +1,16 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "imagem": "assets/images/pages/pages/index/festival vegano-02.png",
+      "alt": "Imagem descritiva do Festival Vegano",
+      "link": "novidades.html"
+    },
+    {
+      "id": 2,
+      "imagem": "assets/images/pages/pages/index/foliamax-02.png",
+      "alt": "Imagem descritiva do Folia-Max",
+      "link": "novidades.html"
+    }
+  ]
+}

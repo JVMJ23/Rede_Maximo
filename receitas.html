@@ -24,6 +24,7 @@
   <meta property="og:locale" content="pt_BR">
 
   <title>Receitas Max - Rede Máximo Supermercados</title>
+  <link rel="canonical" href="https://www.supermercadomaximo.com.br">
   <link rel="stylesheet" href="assets/css/global/global.css">
   <link rel="stylesheet" href="assets/css/pages/receitas/receitasmax.css">
   <link rel="stylesheet" href="assets/css/pages/receitas/receitasmax-responsible.css">
@@ -116,48 +117,39 @@
 
   <script>
 
-    const receitasBasicas = [
-  { id: 1, nome: "Panacota", imagem: "panacota1-01.png" },
-  { id: 2, nome: "Bacalhau", imagem: "bacalhau2-01.png" },
-  { id: 3, nome: "Mousse", imagem: "mousse3-01.png" },
-  { id: 4, nome: "Moranga", imagem: "moranga4-01.png" },
-  { id: 5, nome: "Salada de Pimentões", imagem: "saladapimentoes5-01.png" },
-  { id: 6, nome: "Bombocado", imagem: "bombocado6-01.png" },
-  { id: 7, nome: "Snack de Grão de Bico", imagem: "snack7-01.png" },
-  { id: 8, nome: "Pina Colada", imagem: "pina8-01.png" },
-  { id: 9, nome: "Sunset", imagem: "sunset9.png" },
-  { id: 10, nome: "Casquinha", imagem: "casquinha10-01.png" },
-  { id: 11, nome: "Brownie", imagem: "brownie11-01.png" },
-  { id: 12, nome: "Moqueca Vegana", imagem: "moquecaveg12-01.png" },
-  { id: 13, nome: "Espaguetti Pesto", imagem: "spaguetti.13-01.png" },
-  { id: 14, nome: "Watermelon Gin", imagem: "watermelongin14-01.png" },
-  { id: 15, nome: "Tzatziki", imagem: "tzatziki15-01.png" },
-  { id: 16, nome: "Pudim", imagem: "pudim16-01.png" },
-  { id: 17, nome: "Ginger Drink", imagem: "ginger17-01.png" },
-  { id: 18, nome: "Smoothie", imagem: "smoothie18-01.png" }
-];
+ let receitasData = [];
 
-// Gerar grid de receitas
-function gerarGridReceitas() {
-  const grid = document.getElementById('receitas-grid');
-  
-  receitasBasicas.forEach(receita => {
-    const link = document.createElement('a');
-    link.href = `pages/receitasmax/receitasmax-index.html?id=${receita.id}`;
-    link.className = 'receita';
-    
-    link.innerHTML = `
-      <img src="assets/images/pages/pages/receitas/${receita.imagem}" 
-           alt="Receita - ${receita.nome}" 
-           loading="lazy">
-    `;
-    
-    grid.appendChild(link);
-  });
-}
+  // Carregar dados do JSON
+  fetch('assets/data/receitas.json')
+    .then(response => response.json())
+    .then(data => {
+      receitasData = data.receitas;
+      gerarGridReceitas();
+    })
+    .catch(error => console.error('Erro ao carregar receitas:', error));
 
-// Inicializar quando a página carregar
-document.addEventListener('DOMContentLoaded', gerarGridReceitas);
+  // Gerar grid de receitas
+  function gerarGridReceitas() {
+    const grid = document.getElementById('receitas-grid');
+    
+    receitasData.forEach(receita => {
+      const link = document.createElement('a');
+      link.href = `pages/receitasmax/receitasmax-index.html?id=${receita.id}`;
+      link.className = 'receita';
+      
+      // Extrair apenas o nome da imagem
+      const nomeImagem = receita.imagem.split('/').pop();
+      
+      link.innerHTML = `
+        <img src="assets/images/pages/pages/receitas/${nomeImagem}" 
+             alt="Receita - ${receita.nome}" 
+             loading="lazy">
+      `;
+      
+      grid.appendChild(link);
+    });
+  }
+
 </script>
     <script src="assets/javascript/scrollSuave.js"></script>
 </body>

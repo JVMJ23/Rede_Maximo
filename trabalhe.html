@@ -6,7 +6,7 @@
   <meta name="description" content="Trabalhe conosco na Rede Máximo. Envie seu currículo e faça parte do nosso time.">
   <meta property="og:title" content="Trabalhe Conosco - Rede Máximo">
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://www.recaptcha.net; style-src 'self' 'unsafe-inline' https://www.google.com; img-src 'self' data: https: https://www.google.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.google.com https://www.recaptcha.net; connect-src 'self' https://www.google.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://www.recaptcha.net; style-src 'self' 'unsafe-inline' https://www.google.com; img-src 'self' data: https: https://www.google.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.google.com https://www.recaptcha.net; connect-src 'self' https://www.google.com https://formsubmit.co; form-action 'self' https://formsubmit.co;">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -23,6 +23,7 @@
 
 
   <title>Trabalhe Conosco - Rede Máximo de Supermercados</title>
+  <link rel="canonical" href="https://www.supermercadomaximo.com.br">
   <link rel="stylesheet" href="assets/css/global/global.css">
   <link rel="stylesheet" href="assets/css/pages/trabalhe/trabalhe.css">
   <link rel="stylesheet" href="assets/css/pages/trabalhe/trabalhe-resposible.css">
@@ -82,17 +83,13 @@
 
       <p>Preencha os campos abaixo e anexe seu currículo para participar dos nossos processos seletivos.</p>
   
-      <form id="formulario-trabalho" method="POST" enctype="multipart/form-data" data-fjs="true">
+      <form id="formulario-trabalho" method="POST" action="https://formsubmit.co/ajax/curriculos@supermercadomaximo.com.br" enctype="multipart/form-data" data-fjs="true">
 
                 <input type="hidden" name="_recipients" value="curriculos@supermercadomaximo.com.br">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
 
                 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-       
-
-       <!-- Honeypot anti-spam -->
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
 <div class="form-group">
         <label for="nome">Nome completo</label>
@@ -238,21 +235,5 @@
         <script src="assets/javascript/trabalhe.js"></script>
         <script src="assets/javascript/scrollSuave.js"></script>
 
-  <script>
-        window.recaptchaCallback = function () {
-          recaptchaVerificado = true;
-          verificarBotaoEnvio(); // função que ativa o botão
-        };
-
-        window.recaptchaExpiredCallback = function () {
-          recaptchaVerificado = false;
-          verificarBotaoEnvio();
-        };
-
-        window.recaptchaErrorCallback = function () {
-          recaptchaVerificado = false;
-          verificarBotaoEnvio();
-        };
-  </script>
 </body>
 </html>
