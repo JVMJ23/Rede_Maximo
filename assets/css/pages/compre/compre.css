@@ -7,6 +7,7 @@ main.compre-main {
   padding: 0 15%;
   margin: 0 auto;
   display: flex;
+  align-items: stretch;
   flex-wrap: nowrap; /* Evita quebra para manter 50/50 em todas as plataformas */
 }
 
@@ -91,8 +92,8 @@ section.compre .container {
 
 .infografico img {
   display:block;
-  width: 107%;
-  height: auto;
+  width: 100%;
+  height: 95%;
   object-fit: fill;
 }
 
