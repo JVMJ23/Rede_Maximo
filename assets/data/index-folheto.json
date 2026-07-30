@@ -1,0 +1,9 @@
+{
+  "folheto": {
+    "ativo": true,
+    "imagem": "assets/images/pages/pages/index/folheto exemplo.png",
+    "alt": "Folheto promocional da semana",
+    "link": "ofertas.html",
+    "title": "Clique no folheto e seja redirecionado as ofertas da semana"
+  }
+}

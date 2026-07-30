@@ -177,7 +177,7 @@
     .recipe-container {
       background-image: url(../../../images/global/background-receitas.webp);
       background-repeat: repeat-x;
-      background-size: 410px auto;
+      background-size: 500px auto;
       padding-left: 10px;
       padding-right: 10px;
     }
@@ -189,7 +189,7 @@
     }
     
     .recipe-image img {
-      width: 170px;
+      width: 175px;
     }
     
     .ingredients {
@@ -213,7 +213,7 @@
     }
     
     .ingredients p {
-      font-size: 9px;
+      font-size: 10px;
       padding-left: 13px;
     }
     
@@ -262,18 +262,18 @@
   }
 
   .ingredients h2 {
-    font-size: 7px;
+    font-size: 8px;
     margin-left: 5px;
     margin-bottom: 8px;
   }
 
   .ingredients h5 {
-    font-size: 6px;
+    font-size: 7px;
     padding-left: 5px;
   }
 
   .ingredients p {
-    font-size: 6px;
+    font-size: 8px;
     padding-left: 5px;
   }
 
@@ -282,18 +282,18 @@
   }
 
   .ingredients li {
-    font-size: 6px;
+    font-size: 8px;
     margin-bottom: 1px;
   }
 
   .instructions h2 {
-    font-size: 7px;
+    font-size: 9px;
     margin-bottom: 8px;
   }
 
   .instructions p,
   .instructions h5 {
-    font-size: 6px;
+    font-size: 8px;
     line-height: 1.2;
   }
 }

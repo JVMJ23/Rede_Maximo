@@ -15,7 +15,7 @@ body {
 /* Área que agrupa o slider e o banner lateral */
 .index-main-content {
   display: flex;
-  width: 70%;
+  width: 69%;
   margin: 0 auto;
   align-items: stretch;
   justify-content: space-between;
@@ -138,7 +138,7 @@ body {
 }
 
 .meumaxclube-banner{
-  width:68%;
+  width:67%;
   justify-content:center;
   display:flex;
   margin:10px auto 0;
