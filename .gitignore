@@ -1,0 +1,10 @@
+# Sensitive/server-only files
+.htaccess
+.env
+*.log
+*.bak
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
