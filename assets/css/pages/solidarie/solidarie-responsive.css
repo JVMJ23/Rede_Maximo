@@ -1,5 +1,10 @@
 /* Media queries para responsividade */
 @media screen and (max-width: 992px) {
+
+    body {
+    background-image: none;
+    background-color: #fff;
+  }
   main {
     padding: 20px 15px;
   }

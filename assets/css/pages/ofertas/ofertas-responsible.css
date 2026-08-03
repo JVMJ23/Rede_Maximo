@@ -2,6 +2,11 @@
 
     /* 990px - Telas maiores e desktop */
     @media screen and (max-width: 990px) {
+
+      body {
+        background-image: none;
+        background-color: #fff;
+  }
       .ofertas {
         width: 85%;
       }

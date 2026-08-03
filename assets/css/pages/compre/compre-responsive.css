@@ -1,4 +1,9 @@
 @media screen and (max-width: 992px) {
+
+  body {
+    background-image: none;
+    background-color: #fff;
+  }
   main.compre-main {
     min-height: 100px;
     padding: 0 10%;
@@ -24,10 +29,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    background-image: none;
-    background-color: #fff;
-  }
+
 
   main.compre-main {
     padding: 0 5%;

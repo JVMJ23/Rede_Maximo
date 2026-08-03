@@ -6,6 +6,11 @@
   }
   
   @media screen and (max-width: 992px) {
+
+    body {
+    background-image: none;
+    background-color: #fff;
+  }
     .galeria2 img, .galeria3 img {
       height: 240px;
     }
