@@ -1,7 +1,7 @@
 let receitasData = [];
 
 // Carregar dados do JSON
-fetch('../../../assets/data/receitas.json')
+fetch('../../assets/data/receitas.json')
   .then(response => response.json())
   .then(data => {
     receitasData = data.receitas;
