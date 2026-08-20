@@ -2,6 +2,45 @@ const OFERTAS_JSON_PATH = 'assets/data/ofertas.json';
 
 let modalOfertas = null;
 
+function normalizarDataISO(dataISO) {
+  if (typeof dataISO !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(dataISO)) {
+    return null;
+  }
+
+  const data = new Date(`${dataISO}T00:00:00`);
+  if (Number.isNaN(data.getTime())) {
+    return null;
+  }
+
+  return data;
+}
+
+function dentroDaVigencia(dataInicio, dataFim) {
+  const inicio = normalizarDataISO(dataInicio);
+  const fim = normalizarDataISO(dataFim);
+  const hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+
+  if (inicio && hoje < inicio) {
+    return false;
+  }
+
+  if (fim) {
+    const fimDoDia = new Date(fim);
+    fimDoDia.setHours(23, 59, 59, 999);
+
+    if (hoje > fimDoDia) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function ofertaEstaAtiva(oferta) {
+  return Boolean(oferta && oferta.ativa) && dentroDaVigencia(oferta.dataInicio, oferta.dataFim);
+}
+
 function escaparHtml(texto) {
   return String(texto)
     .replace(/&/g, '&amp;')
@@ -94,10 +133,10 @@ function renderSemOferta(container, mensagem) {
 function renderBotoesPorCidade(container, payload) {
   const titulo = payload.titulo || 'Ofertas válidas por cidade';
   const lista = Array.isArray(payload.ofertasPorCidade) ? payload.ofertasPorCidade : [];
-  const ofertasAtivas = lista.filter(oferta => oferta.ativa && oferta.cidade);
+  const ofertasAtivas = lista.filter(oferta => ofertaEstaAtiva(oferta) && oferta.cidade);
 
   if (ofertasAtivas.length === 0) {
-    renderSemOferta(container, 'No momento, não há ofertas ativas por cidade.');
+    renderSemOferta(container, 'No momento, não há ofertas válidas, mas fique atento! Em breve teremos novidades para você.');
     return;
   }
 
@@ -153,7 +192,7 @@ function renderBotoesPorCidade(container, payload) {
 
 function renderFormatoLegado(container, payload) {
   const ofertas = Array.isArray(payload.ofertas) ? payload.ofertas : [];
-  const ofertasAtivas = ofertas.filter(oferta => oferta.ativa);
+  const ofertasAtivas = ofertas.filter(oferta => ofertaEstaAtiva(oferta));
 
   if (ofertasAtivas.length === 0) {
     renderSemOferta(container, 'Fique atento. Em breve teremos novas ofertas para voce.');

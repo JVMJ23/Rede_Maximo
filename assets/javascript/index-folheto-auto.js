@@ -1,5 +1,40 @@
 const FOLHETO_JSON_PATH = 'assets/data/index-folheto.json';
 
+function normalizarDataISO(dataISO) {
+  if (typeof dataISO !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(dataISO)) {
+    return null;
+  }
+
+  const data = new Date(`${dataISO}T00:00:00`);
+  if (Number.isNaN(data.getTime())) {
+    return null;
+  }
+
+  return data;
+}
+
+function folhetoDentroDaVigencia(dataInicio, dataFim) {
+  const inicio = normalizarDataISO(dataInicio);
+  const fim = normalizarDataISO(dataFim);
+  const hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+
+  if (inicio && hoje < inicio) {
+    return false;
+  }
+
+  if (fim) {
+    const fimDoDia = new Date(fim);
+    fimDoDia.setHours(23, 59, 59, 999);
+
+    if (hoje > fimDoDia) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 function obterFolhetoFallback() {
   const anchor = document.querySelector('.folheto-container .folheto-unico a');
   const imagem = document.querySelector('.folheto-container .folheto-unico img');
@@ -37,9 +72,11 @@ function aplicarFolhetoNaHome(folheto) {
 
 function normalizarFolheto(payload, fallback) {
   const folheto = payload && payload.folheto ? payload.folheto : {};
+  const ativoBase = typeof folheto.ativo === 'boolean' ? folheto.ativo : fallback.ativo;
+  const ativoPorData = folhetoDentroDaVigencia(folheto.dataInicio, folheto.dataFim);
 
   return {
-    ativo: typeof folheto.ativo === 'boolean' ? folheto.ativo : fallback.ativo,
+    ativo: ativoBase && ativoPorData,
     imagem: folheto.imagem || fallback.imagem,
     alt: folheto.alt || fallback.alt,
     link: folheto.link || fallback.link,

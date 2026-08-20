@@ -1,5 +1,44 @@
 let novidadesData = [];
 
+function normalizarDataISO(dataISO) {
+  if (typeof dataISO !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(dataISO)) {
+    return null;
+  }
+
+  const data = new Date(`${dataISO}T00:00:00`);
+  if (Number.isNaN(data.getTime())) {
+    return null;
+  }
+
+  return data;
+}
+
+function dentroDaVigencia(dataInicio, dataFim) {
+  const inicio = normalizarDataISO(dataInicio);
+  const fim = normalizarDataISO(dataFim);
+  const hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+
+  if (inicio && hoje < inicio) {
+    return false;
+  }
+
+  if (fim) {
+    const fimDoDia = new Date(fim);
+    fimDoDia.setHours(23, 59, 59, 999);
+
+    if (hoje > fimDoDia) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function novidadeEstaAtiva(novidade) {
+  return Boolean(novidade && novidade.ativa) && dentroDaVigencia(novidade.dataInicio, novidade.dataFim);
+}
+
 // Carregar do JSON
 fetch('assets/data/novidades.json')
   .then(response => {
@@ -21,9 +60,12 @@ fetch('assets/data/novidades.json')
 // Função para gerar as novidades
 function gerarNovidades() {
   const container = document.getElementById('novidades-container');
+  if (!container) {
+    return;
+  }
   
   // Filtrar apenas novidades ativas
-  const novidadesAtivas = novidadesData.filter(novidade => novidade.ativa);
+  const novidadesAtivas = novidadesData.filter(novidade => novidadeEstaAtiva(novidade));
   
   if (novidadesAtivas.length === 0) {
     container.innerHTML = `

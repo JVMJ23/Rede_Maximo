@@ -31,6 +31,9 @@
   .site-footer .footer-center img {
     max-width: 90px;
   }
+  .site-footer .footer-center .footer-credit {
+    font-size: 9px;
+  }
   .site-footer .store-addresses strong{
     font-size: 10px;
   }
@@ -79,6 +82,10 @@
     max-width: 70px;
   }
 
+  .site-footer .footer-center .footer-credit {
+    font-size: 5px;
+  }
+
   .site-footer .footer-center p {
     font-size: 5px;
 }
@@ -120,6 +127,10 @@
 .site-footer .footer-center img {
   max-width: 70px;
 }
+
+.site-footer .footer-center .footer-credit {
+  font-size: 7px;
+}
 }
 @media screen and (max-width: 375px) {
  /* Ajustes para celulares pequenos e medios */
@@ -157,6 +168,10 @@
 .site-footer .footer-center img {
   max-width: 60px;
 }
+
+.site-footer .footer-center .footer-credit {
+  font-size: 6px;
+}
 }
   @media screen and (max-width: 320px) {
  /* Ajustes para celulares pequenos */
@@ -192,6 +207,10 @@
 
 .site-footer .footer-center img {
   max-width: 50px;
+}
+
+.site-footer .footer-center .footer-credit {
+  font-size: 5px;
 }
 
 .site-footer .footer-center p {

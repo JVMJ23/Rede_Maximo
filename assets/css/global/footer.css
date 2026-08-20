@@ -59,6 +59,16 @@
   display: block;
 }
 
+.site-footer .footer-center .footer-credit {
+  display: inline-block;
+  font-family: 'MyriadProRegular', sans-serif;
+  font-size: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
 .site-footer .footer-center p {
   font-family: 'MyriadProRegular', sans-serif;
   font-size: 10px;

@@ -1,6 +1,8 @@
 {
   "folheto": {
     "ativo": true,
+    "dataInicio": "2026-08-01",
+    "dataFim": "2026-08-31",
     "imagem": "assets/images/pages/pages/index/folheto exemplo.png",
     "alt": "Folheto promocional da semana",
     "link": "ofertas.html",
