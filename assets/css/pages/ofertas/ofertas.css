@@ -76,6 +76,10 @@
       font-size: 15px;
     }
 
+    .ofertas-captcha-status.info {
+      color: #003366;
+    }
+
     .ofertas-captcha-status.erro {
       color: #a32622;
     }
@@ -86,6 +90,26 @@
 
     .ofertas-captcha-gate--liberado {
       display: none;
+    }
+
+    .ofertas-captcha-retry {
+      display: none;
+      margin: 12px auto 0;
+      padding: 10px 16px;
+      border: 0;
+      border-radius: 8px;
+      background: #003366;
+      color: #fff;
+      font-family: 'MyriadProBlack', sans-serif;
+      cursor: pointer;
+    }
+
+    .ofertas-captcha-retry:hover {
+      filter: brightness(1.08);
+    }
+
+    .ofertas-captcha-retry.is-visible {
+      display: block;
     }
 
     .ofertas-cidades-grid {

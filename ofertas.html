@@ -82,12 +82,12 @@
          <p class="ofertas-subtitulo">Confirme o reCAPTCHA para visualizar os folhetos de ofertas.</p>
          <div class="recaptcha">
            <div class="g-recaptcha"
-             data-sitekey="6LdDbkArAAAAAM-dMWtauQI3ffkzJ-r66eA8sN7Q"
              data-callback="ofertasRecaptchaCallback"
              data-expired-callback="ofertasRecaptchaExpiredCallback"
              data-error-callback="ofertasRecaptchaErrorCallback"></div>
          </div>
          <p id="ofertas-captcha-status" class="ofertas-captcha-status" role="status" aria-live="polite">Carregando reCAPTCHA...</p>
+         <button id="ofertas-captcha-retry" class="ofertas-captcha-retry" type="button">Tentar novamente</button>
        </div>
        <div id="ofertas-dinamicas" aria-live="polite"></div>
     </div>
@@ -122,7 +122,8 @@
   </footer>
     <script>
       window.OFERTAS_CONFIG = {
-        remoteJsonUrl: ''
+        remoteJsonUrl: '',
+        recaptchaSiteKey: '6LdDbkArAAAAAM-dMWtauQI3ffkzJ-r66eA8sN7Q'
       };
     </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>

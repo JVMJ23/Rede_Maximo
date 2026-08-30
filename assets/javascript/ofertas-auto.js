@@ -3,6 +3,9 @@ const OFERTAS_CONFIG = window.OFERTAS_CONFIG || {};
 const OFERTAS_REMOTE_JSON_URL = typeof OFERTAS_CONFIG.remoteJsonUrl === 'string'
   ? OFERTAS_CONFIG.remoteJsonUrl.trim()
   : '';
+const OFERTAS_RECAPTCHA_SITE_KEY = typeof OFERTAS_CONFIG.recaptchaSiteKey === 'string'
+  ? OFERTAS_CONFIG.recaptchaSiteKey.trim()
+  : '';
 
 let modalOfertas = null;
 let ofertasJaCarregadas = false;
@@ -188,12 +191,12 @@ function normalizarOfertaBackend(oferta) {
   const imagemArquivo = typeof oferta.imagemUrl === 'string' ? oferta.imagemUrl.trim() : '';
 
   return lojas.map(loja => ({
-    id: oferta.id || `${loja}-${dataInicio || 'sem-data'}`,
+    id: oferta.id !== undefined && oferta.id !== null ? `${oferta.id}-${loja}` : `${loja}-${dataInicio || 'sem-data'}`,
     cidade: loja,
     url: urlArquivo,
     imagem: imagemArquivo,
     mensagemSemFolheto: oferta.mensagemSemFolheto || 'Sem folheto disponível no momento',
-    ativa: Boolean(oferta.ativa),
+    ativa: typeof oferta.ativa === 'boolean' ? oferta.ativa : true,
     dataInicio,
     dataFim
   }));
@@ -352,12 +355,13 @@ async function gerarOfertas() {
 
 function atualizarStatusCaptcha(mensagem, tipo) {
   const status = document.getElementById('ofertas-captcha-status');
+  const retry = document.getElementById('ofertas-captcha-retry');
   if (!status) {
     return;
   }
 
   status.textContent = mensagem;
-  status.classList.remove('erro', 'sucesso');
+  status.classList.remove('erro', 'sucesso', 'info');
 
   if (tipo === 'erro') {
     status.classList.add('erro');
@@ -365,6 +369,18 @@ function atualizarStatusCaptcha(mensagem, tipo) {
 
   if (tipo === 'sucesso') {
     status.classList.add('sucesso');
+  }
+
+  if (tipo === 'info') {
+    status.classList.add('info');
+  }
+
+  if (retry) {
+    if (tipo === 'erro') {
+      retry.classList.add('is-visible');
+    } else {
+      retry.classList.remove('is-visible');
+    }
   }
 }
 
@@ -397,6 +413,21 @@ function inicializarCaptchaOfertas() {
     return;
   }
 
+  const recaptchaElement = gate.querySelector('.g-recaptcha');
+  const retry = document.getElementById('ofertas-captcha-retry');
+  if (retry) {
+    retry.addEventListener('click', function() {
+      window.location.reload();
+    });
+  }
+
+  if (!recaptchaElement || !OFERTAS_RECAPTCHA_SITE_KEY) {
+    bloquearOfertasComCaptcha('Não foi possível iniciar a proteção de acesso. Recarregue a página.');
+    return;
+  }
+
+  recaptchaElement.setAttribute('data-sitekey', OFERTAS_RECAPTCHA_SITE_KEY);
+
   window.ofertasRecaptchaCallback = function() {
     recaptchaVerificado = true;
     liberarOfertasComCaptcha();
@@ -412,11 +443,22 @@ function inicializarCaptchaOfertas() {
     bloquearOfertasComCaptcha('Não foi possível validar o reCAPTCHA. Tente novamente.');
   };
 
-  if (window.grecaptcha) {
-    atualizarStatusCaptcha('Confirme o reCAPTCHA para visualizar os folhetos.', 'info');
-  } else {
-    bloquearOfertasComCaptcha('Carregando reCAPTCHA... se não aparecer, atualize a página.');
-  }
+  atualizarStatusCaptcha('Carregando reCAPTCHA...', 'info');
+
+  let tentativas = 0;
+  const intervalo = window.setInterval(function() {
+    tentativas += 1;
+    if (window.grecaptcha) {
+      window.clearInterval(intervalo);
+      atualizarStatusCaptcha('Confirme o reCAPTCHA para visualizar os folhetos.', 'info');
+      return;
+    }
+
+    if (tentativas >= 30) {
+      window.clearInterval(intervalo);
+      bloquearOfertasComCaptcha('Não foi possível carregar o reCAPTCHA. Atualize a página e tente novamente.');
+    }
+  }, 500);
 }
 
 function inicializarPaginaOfertas() {
