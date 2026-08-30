@@ -207,16 +207,16 @@ function normalizarPayloadOfertas(payload) {
     return payload;
   }
 
-  if (!Array.isArray(payload?.ofertas)) {
-    return payload;
+  if (Array.isArray(payload?.ofertas)) {
+    const ofertasPorCidade = payload.ofertas.flatMap(normalizarOfertaBackend);
+
+    return {
+      titulo: payload.titulo || 'Ofertas válidas por loja',
+      ofertasPorCidade
+    };
   }
 
-  const ofertasPorCidade = payload.ofertas.flatMap(normalizarOfertaBackend);
-
-  return {
-    titulo: payload.titulo || 'Ofertas válidas por loja',
-    ofertasPorCidade
-  };
+  return null;
 }
 
 function renderBotoesPorCidade(container, payload) {
@@ -339,6 +339,9 @@ async function gerarOfertas() {
   try {
     const payloadBruto = await carregarPayloadDeOfertas();
     const payload = normalizarPayloadOfertas(payloadBruto);
+    if (!payload) {
+      throw new Error('Formato de JSON de ofertas inválido');
+    }
 
     if (Array.isArray(payload.ofertasPorCidade)) {
       renderBotoesPorCidade(container, payload);
@@ -375,12 +378,8 @@ function atualizarStatusCaptcha(mensagem, tipo) {
     status.classList.add('info');
   }
 
-  if (retry) {
-    if (tipo === 'erro') {
-      retry.classList.add('is-visible');
-    } else {
-      retry.classList.remove('is-visible');
-    }
+  if (retry && tipo !== 'erro') {
+    retry.classList.remove('is-visible');
   }
 }
 
@@ -396,14 +395,23 @@ function liberarOfertasComCaptcha() {
   gerarOfertas();
 }
 
-function bloquearOfertasComCaptcha(mensagem) {
+function bloquearOfertasComCaptcha(mensagem, exibirRetry = true) {
   const gate = document.getElementById('ofertas-captcha-gate');
+  const retry = document.getElementById('ofertas-captcha-retry');
   if (!gate) {
     return;
   }
 
   gate.classList.remove('ofertas-captcha-gate--liberado');
   atualizarStatusCaptcha(mensagem, 'erro');
+
+  if (retry) {
+    if (exibirRetry) {
+      retry.classList.add('is-visible');
+    } else {
+      retry.classList.remove('is-visible');
+    }
+  }
 }
 
 function inicializarCaptchaOfertas() {
@@ -422,7 +430,7 @@ function inicializarCaptchaOfertas() {
   }
 
   if (!recaptchaElement || !OFERTAS_RECAPTCHA_SITE_KEY) {
-    bloquearOfertasComCaptcha('Não foi possível iniciar a proteção de acesso. Recarregue a página.');
+    bloquearOfertasComCaptcha('Proteção de acesso indisponível no momento. Contate o suporte para restabelecer o acesso.', false);
     return;
   }
 
@@ -448,7 +456,7 @@ function inicializarCaptchaOfertas() {
   let tentativas = 0;
   const intervalo = window.setInterval(function() {
     tentativas += 1;
-    if (window.grecaptcha) {
+    if (window.grecaptcha && typeof window.grecaptcha.render === 'function') {
       window.clearInterval(intervalo);
       atualizarStatusCaptcha('Confirme o reCAPTCHA para visualizar os folhetos.', 'info');
       return;

@@ -126,6 +126,14 @@
         recaptchaSiteKey: '6LdDbkArAAAAAM-dMWtauQI3ffkzJ-r66eA8sN7Q'
       };
     </script>
+    <script>
+      (function configurarSiteKeyOfertas() {
+        var captcha = document.querySelector('#ofertas-captcha-gate .g-recaptcha');
+        if (captcha && window.OFERTAS_CONFIG && window.OFERTAS_CONFIG.recaptchaSiteKey) {
+          captcha.setAttribute('data-sitekey', window.OFERTAS_CONFIG.recaptchaSiteKey);
+        }
+      })();
+    </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="assets/javascript/responsive-recaptcha.js"></script>
     <script src="assets/javascript/ofertas-auto.js"></script>
