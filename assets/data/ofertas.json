@@ -1,110 +1,24 @@
 {
-  "titulo": "Ofertas da semana por cidade",
-  "ofertasPorCidade": [
+  "titulo": "Ofertas da semana por loja",
+  "ofertas": [
     {
-      "id": 1,
-      "cidade": "SJC - Bosque dos Eucaliptos",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Bosque dos Eucaliptos.",
-      "ativa": false,
-      "dataInicio": "2026-08-01",
-      "dataFim": "2026-08-31"
-    },
-    {
-      "id": 2,
-      "cidade": "SJC - Jardim Aquarius",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Jardim Aquarius.",
-      "ativa": false,
-      "dataInicio": "2026-08-01",
-      "dataFim": "2026-08-31"
-    },
-    {
-      "id": 3,
-      "cidade": "SJC - Urbanova",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Urbanova.",
-      "ativa": false,
-      "dataInicio": "2026-08-01",
-      "dataFim": "2026-08-31"
-    },
-    {
-      "id": 4,
-      "cidade": "SJC - Vila Industrial",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Vila Industrial.",
-      "ativa": false,
-      "dataInicio": "2026-08-01",
-      "dataFim": "2026-08-31"
-    },
-    {
-      "id": 5,
-      "cidade": "SJC - Vila Tesouro",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Vila Tesouro.",
-      "ativa": false,
-      "dataInicio": "2026-08-01",
-      "dataFim": "2026-08-31"
-    },
-    {
-      "id": 6,
-      "cidade": "Guará - Parque do Sol",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Parque do Sol.",
-      "ativa": false,
-      "dataInicio": "2026-08-01",
-      "dataFim": "2026-08-31"
-    },
-    {
-      "id": 7,
-      "cidade": "Campos do Jordão",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Campos do Jordão.",
-      "ativa": false,
-      "dataInicio": "2026-08-01",
-      "dataFim": "2026-08-31"
-    },
-    {
-      "id": 8,
-      "cidade": "Guaratinguetá - Avenida JK",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Guaratinguetá.",
-      "ativa": false,
-      "dataInicio": "2026-08-01",
-      "dataFim": "2026-08-31"
-    },
-    {
-      "id": 9,
-      "cidade": "Lorena",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Lorena.",
-      "ativa": false,
-      "dataInicio": "2026-08-01",
-      "dataFim": "2026-08-31"
-    },
-    {
-      "id": 10,
-      "cidade": "Ubatuba",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Ubatuba.",
-      "ativa": false,
-      "dataInicio": "2026-08-01",
-      "dataFim": "2026-08-31"
-    },
-    {
-      "id": 11,
-      "cidade": "Tremembé",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Tremembé.",
-      "ativa": false,
-      "dataInicio": "2026-08-01",
-      "dataFim": "2026-08-31"
-    },
-    {
-      "id": 12,
-      "cidade": "Jacareí - Villa Branca",
-      "imagem": "assets/images/pages/pages/ofertas/folheto.png",
-      "mensagemSemFolheto": "Ainda não temos folheto disponível para a loja Jacareí.",
+      "id": "folheto-geral-2026-08",
+      "arquivoUrl": "assets/images/pages/pages/ofertas/folheto.png",
+      "lojasParticipantes": [
+        "SJC - Bosque dos Eucaliptos",
+        "SJC - Jardim Aquarius",
+        "SJC - Urbanova",
+        "SJC - Vila Industrial",
+        "SJC - Vila Tesouro",
+        "Guará - Parque do Sol",
+        "Campos do Jordão",
+        "Guaratinguetá - Avenida JK",
+        "Lorena",
+        "Ubatuba",
+        "Tremembé",
+        "Jacareí - Villa Branca"
+      ],
+      "mensagemSemFolheto": "Ainda não temos folheto disponível para esta loja.",
       "ativa": false,
       "dataInicio": "2026-08-01",
       "dataFim": "2026-08-31"

@@ -1,6 +1,12 @@
-const OFERTAS_JSON_PATH = 'assets/data/ofertas.json';
+const OFERTAS_JSON_PATH_LOCAL = 'assets/data/ofertas.json';
+const OFERTAS_CONFIG = window.OFERTAS_CONFIG || {};
+const OFERTAS_REMOTE_JSON_URL = typeof OFERTAS_CONFIG.remoteJsonUrl === 'string'
+  ? OFERTAS_CONFIG.remoteJsonUrl.trim()
+  : '';
 
 let modalOfertas = null;
+let ofertasJaCarregadas = false;
+let recaptchaVerificado = false;
 
 function normalizarDataISO(dataISO) {
   if (typeof dataISO !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(dataISO)) {
@@ -38,7 +44,12 @@ function dentroDaVigencia(dataInicio, dataFim) {
 }
 
 function ofertaEstaAtiva(oferta) {
-  return Boolean(oferta && oferta.ativa) && dentroDaVigencia(oferta.dataInicio, oferta.dataFim);
+  if (!oferta) {
+    return false;
+  }
+
+  const ativa = typeof oferta.ativa === 'boolean' ? oferta.ativa : true;
+  return ativa && dentroDaVigencia(oferta.dataInicio, oferta.dataFim);
 }
 
 function escaparHtml(texto) {
@@ -130,6 +141,81 @@ function renderSemOferta(container, mensagem) {
   `;
 }
 
+function extrairListaLojas(oferta) {
+  if (!oferta) {
+    return [];
+  }
+
+  const lojas = Array.isArray(oferta.lojasParticipantes)
+    ? oferta.lojasParticipantes
+    : Array.isArray(oferta.nomesLojasParticipantes)
+      ? oferta.nomesLojasParticipantes
+      : [];
+
+  return lojas
+    .filter(loja => typeof loja === 'string')
+    .map(loja => loja.trim())
+    .filter(Boolean);
+}
+
+function normalizarOfertaBackend(oferta) {
+  const lojas = extrairListaLojas(oferta);
+  if (lojas.length === 0) {
+    return [];
+  }
+
+  const dataInicio = typeof oferta.dataInicio === 'string'
+    ? oferta.dataInicio
+    : typeof oferta.vigenciaInicio === 'string'
+      ? oferta.vigenciaInicio
+      : typeof oferta.vigencia?.inicio === 'string'
+        ? oferta.vigencia.inicio
+        : '';
+
+  const dataFim = typeof oferta.dataFim === 'string'
+    ? oferta.dataFim
+    : typeof oferta.vigenciaFim === 'string'
+      ? oferta.vigenciaFim
+      : typeof oferta.vigencia?.fim === 'string'
+        ? oferta.vigencia.fim
+        : '';
+
+  const urlArquivo = typeof oferta.arquivoUrl === 'string'
+    ? oferta.arquivoUrl.trim()
+    : typeof oferta.urlArquivo === 'string'
+      ? oferta.urlArquivo.trim()
+      : '';
+  const imagemArquivo = typeof oferta.imagemUrl === 'string' ? oferta.imagemUrl.trim() : '';
+
+  return lojas.map(loja => ({
+    id: oferta.id || `${loja}-${dataInicio || 'sem-data'}`,
+    cidade: loja,
+    url: urlArquivo,
+    imagem: imagemArquivo,
+    mensagemSemFolheto: oferta.mensagemSemFolheto || 'Sem folheto disponível no momento',
+    ativa: Boolean(oferta.ativa),
+    dataInicio,
+    dataFim
+  }));
+}
+
+function normalizarPayloadOfertas(payload) {
+  if (Array.isArray(payload?.ofertasPorCidade)) {
+    return payload;
+  }
+
+  if (!Array.isArray(payload?.ofertas)) {
+    return payload;
+  }
+
+  const ofertasPorCidade = payload.ofertas.flatMap(normalizarOfertaBackend);
+
+  return {
+    titulo: payload.titulo || 'Ofertas válidas por loja',
+    ofertasPorCidade
+  };
+}
+
 function renderBotoesPorCidade(container, payload) {
   const titulo = payload.titulo || 'Ofertas válidas por cidade';
   const lista = Array.isArray(payload.ofertasPorCidade) ? payload.ofertasPorCidade : [];
@@ -170,8 +256,8 @@ function renderBotoesPorCidade(container, payload) {
   }).join('');
 
   container.innerHTML = `
-    <h1>${titulo}</h1>
-    <p class="ofertas-subtitulo">Clique na sua cidade para abrir as ofertas válidas.</p>
+    <h1>${escaparHtml(titulo)}</h1>
+    <p class="ofertas-subtitulo">Clique na sua loja para abrir as ofertas válidas.</p>
     <div class="ofertas-cidades-grid">
       ${botoesHTML}
     </div>
@@ -200,8 +286,8 @@ function renderFormatoLegado(container, payload) {
   }
 
   const ofertasHTML = ofertasAtivas.map(oferta => `
-    <h1>${oferta.titulo}</h1>
-    <img src="${oferta.imagem}" loading="lazy" alt="${oferta.alt || 'Oferta da semana'}">
+    <h1>${escaparHtml(oferta.titulo || 'Oferta')}</h1>
+    <img src="${escaparHtml(oferta.imagem || '')}" loading="lazy" alt="${escaparHtml(oferta.alt || 'Oferta da semana')}">
   `).join('');
 
   container.innerHTML = `
@@ -210,30 +296,132 @@ function renderFormatoLegado(container, payload) {
   `;
 }
 
+async function carregarPayloadDeOfertas() {
+  const urls = [];
+
+  if (OFERTAS_REMOTE_JSON_URL) {
+    urls.push(OFERTAS_REMOTE_JSON_URL);
+  }
+
+  urls.push(OFERTAS_JSON_PATH_LOCAL);
+
+  let ultimoErro = null;
+
+  for (const url of urls) {
+    try {
+      const response = await fetch(url, { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`Falha ao carregar ofertas em ${url}: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      ultimoErro = error;
+      console.error(`Erro ao carregar ${url}:`, error);
+    }
+  }
+
+  throw ultimoErro || new Error('Falha ao carregar ofertas');
+}
+
 async function gerarOfertas() {
-  const container = document.querySelector('.ofertas .container');
+  if (ofertasJaCarregadas) {
+    return;
+  }
+
+  const container = document.getElementById('ofertas-dinamicas') || document.querySelector('.ofertas .container');
   if (!container) {
     return;
   }
 
   try {
-    const response = await fetch(OFERTAS_JSON_PATH, { cache: 'no-store' });
-    if (!response.ok) {
-      throw new Error(`Falha ao carregar ofertas: ${response.status}`);
-    }
-
-    const payload = await response.json();
+    const payloadBruto = await carregarPayloadDeOfertas();
+    const payload = normalizarPayloadOfertas(payloadBruto);
 
     if (Array.isArray(payload.ofertasPorCidade)) {
       renderBotoesPorCidade(container, payload);
     } else {
       renderFormatoLegado(container, payload);
     }
+
+    ofertasJaCarregadas = true;
   } catch (error) {
     console.error('Erro ao carregar ofertas:', error);
     renderSemOferta(container, 'Nao foi possivel carregar as ofertas agora. Tente novamente em instantes.');
   }
 }
 
-document.addEventListener('DOMContentLoaded', gerarOfertas);
-document.addEventListener('DOMContentLoaded', criarModalOfertas);
+function atualizarStatusCaptcha(mensagem, tipo) {
+  const status = document.getElementById('ofertas-captcha-status');
+  if (!status) {
+    return;
+  }
+
+  status.textContent = mensagem;
+  status.classList.remove('erro', 'sucesso');
+
+  if (tipo === 'erro') {
+    status.classList.add('erro');
+  }
+
+  if (tipo === 'sucesso') {
+    status.classList.add('sucesso');
+  }
+}
+
+function liberarOfertasComCaptcha() {
+  const gate = document.getElementById('ofertas-captcha-gate');
+  if (!gate) {
+    gerarOfertas();
+    return;
+  }
+
+  gate.classList.add('ofertas-captcha-gate--liberado');
+  atualizarStatusCaptcha('Verificação concluída. Carregando ofertas...', 'sucesso');
+  gerarOfertas();
+}
+
+function bloquearOfertasComCaptcha(mensagem) {
+  const gate = document.getElementById('ofertas-captcha-gate');
+  if (!gate) {
+    return;
+  }
+
+  gate.classList.remove('ofertas-captcha-gate--liberado');
+  atualizarStatusCaptcha(mensagem, 'erro');
+}
+
+function inicializarCaptchaOfertas() {
+  const gate = document.getElementById('ofertas-captcha-gate');
+  if (!gate) {
+    gerarOfertas();
+    return;
+  }
+
+  window.ofertasRecaptchaCallback = function() {
+    recaptchaVerificado = true;
+    liberarOfertasComCaptcha();
+  };
+
+  window.ofertasRecaptchaExpiredCallback = function() {
+    recaptchaVerificado = false;
+    bloquearOfertasComCaptcha('A verificação expirou. Confirme novamente para acessar as ofertas.');
+  };
+
+  window.ofertasRecaptchaErrorCallback = function() {
+    recaptchaVerificado = false;
+    bloquearOfertasComCaptcha('Não foi possível validar o reCAPTCHA. Tente novamente.');
+  };
+
+  if (window.grecaptcha) {
+    atualizarStatusCaptcha('Confirme o reCAPTCHA para visualizar os folhetos.', 'info');
+  } else {
+    bloquearOfertasComCaptcha('Carregando reCAPTCHA... se não aparecer, atualize a página.');
+  }
+}
+
+function inicializarPaginaOfertas() {
+  criarModalOfertas();
+  inicializarCaptchaOfertas();
+}
+
+document.addEventListener('DOMContentLoaded', inicializarPaginaOfertas);

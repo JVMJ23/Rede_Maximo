@@ -51,6 +51,43 @@
       font-size: 17px;
     }
 
+    .ofertas-captcha-gate {
+      max-width: 620px;
+      margin: 0 auto 26px;
+      padding: 22px 18px;
+      border: 1px solid #d9e3f2;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 8px 22px rgba(0, 51, 102, 0.08);
+    }
+
+    .ofertas-captcha-gate .recaptcha {
+      display: flex;
+      justify-content: center;
+      margin: 12px 0 8px;
+      overflow: visible;
+    }
+
+    .ofertas-captcha-status {
+      margin: 0;
+      text-align: center;
+      color: #003366;
+      font-family: 'MyriadProRegular', sans-serif;
+      font-size: 15px;
+    }
+
+    .ofertas-captcha-status.erro {
+      color: #a32622;
+    }
+
+    .ofertas-captcha-status.sucesso {
+      color: #1d6e36;
+    }
+
+    .ofertas-captcha-gate--liberado {
+      display: none;
+    }
+
     .ofertas-cidades-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

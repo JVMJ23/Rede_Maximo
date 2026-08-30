@@ -52,6 +52,10 @@
       .modal-oferta-titulo {
         font-size: 22px;
       }
+
+      .ofertas-captcha-gate {
+        padding: 18px 14px;
+      }
     }
 
     /* 576px - Tablets pequenos e smartphones grandes */

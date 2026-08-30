@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.recaptcha.net; style-src 'self' 'unsafe-inline' https://www.google.com; img-src 'self' data: https: https://www.google.com; font-src 'self' https:; frame-src https://www.google.com https://www.recaptcha.net; connect-src 'self' https:;">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -77,11 +77,19 @@
 
   <main class="section ofertas">
       <div class="container">
-        <!--Gerado no oferta auto js-->
-     
-       <div class="botao-voltar-container">
-          <a href="#topo" class="botao-voltar">Topo^</a>
-        </div>
+       <div id="ofertas-captcha-gate" class="ofertas-captcha-gate">
+         <h1>Confirmação de acesso</h1>
+         <p class="ofertas-subtitulo">Confirme o reCAPTCHA para visualizar os folhetos de ofertas.</p>
+         <div class="recaptcha">
+           <div class="g-recaptcha"
+             data-sitekey="6LdDbkArAAAAAM-dMWtauQI3ffkzJ-r66eA8sN7Q"
+             data-callback="ofertasRecaptchaCallback"
+             data-expired-callback="ofertasRecaptchaExpiredCallback"
+             data-error-callback="ofertasRecaptchaErrorCallback"></div>
+         </div>
+         <p id="ofertas-captcha-status" class="ofertas-captcha-status" role="status" aria-live="polite">Carregando reCAPTCHA...</p>
+       </div>
+       <div id="ofertas-dinamicas" aria-live="polite"></div>
     </div>
   </main>
    <!-- Footer com endereços divididos em 2 colunas -->
@@ -112,6 +120,13 @@
       </a>
     </div>
   </footer>
+    <script>
+      window.OFERTAS_CONFIG = {
+        remoteJsonUrl: ''
+      };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="assets/javascript/responsive-recaptcha.js"></script>
     <script src="assets/javascript/ofertas-auto.js"></script>
     <script src="assets/javascript/scrollSuave.js"></script>
 
